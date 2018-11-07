@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FaceAzure_Example' do
+  pod 'FaceAzure', :path => '../'
+
+  target 'FaceAzure_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
