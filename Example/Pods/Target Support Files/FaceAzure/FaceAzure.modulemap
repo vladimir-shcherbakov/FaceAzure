@@ -1,0 +1,6 @@
+framework module FaceAzure {
+  umbrella header "FaceAzure-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - FaceAzure (0.1.0)
+
+DEPENDENCIES:
+  - FaceAzure (from `../`)
+
+EXTERNAL SOURCES:
+  FaceAzure:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FaceAzure: f58652846704caaed98d78913b8bb1afc8579d24
+
+PODFILE CHECKSUM: ea20b91c93bfc6e938ec167778e60db39a528d21
+
+COCOAPODS: 1.5.3
