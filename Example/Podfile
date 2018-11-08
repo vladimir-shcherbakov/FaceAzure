@@ -1,6 +1,8 @@
+platform :ios, '11.0'
 use_frameworks!
 
 target 'FaceAzure_Example' do
+  pod 'AzureClientRuntime', :git => 'https://github.com/vladimir-shcherbakov/azure-runtime-client-for-objectiveC.git', :branch => 'master'
   pod 'FaceAzure', :path => '../'
 
   target 'FaceAzure_Tests' do

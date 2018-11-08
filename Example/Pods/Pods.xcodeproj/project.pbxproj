@@ -7,16 +7,148 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078DCBA7F3CD166FA1EF4B09E5C92A21 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CCC91E3E0661A02D4844894F01070A /* ReplaceMe.m */; };
+		098B776071DFCE48F135EA8DC608EBB6 /* CSFA_FaceRectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = F34C5947322D37F3E02398E4EAD9812F /* CSFA_FaceRectangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A7CC2DFF4AEE8457A29854075FB612E /* CSFA_FaceAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 43BD2DF238A7CDC0B85D8BF15D3998BD /* CSFA_FaceAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C25D0F5E356D2B39539E5A07BFC20DB /* Pods-FaceAzure_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6D36AD87E28128FE6EF0DC140D18D /* Pods-FaceAzure_Example-dummy.m */; };
+		0C38846F549CC028D6D786CC9B257EF6 /* CSFA_DetectedFace.h in Headers */ = {isa = PBXBuildFile; fileRef = B741DF7D5E30F583B3034718C2713938 /* CSFA_DetectedFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D57AAB14936C5FA71C09F9CBA8F8D1F /* AzureClientRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C09CE897F271F6E9F055B9EE1AFD80 /* AzureClientRuntime.framework */; };
+		0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		118D6F5E2387E95993EF032FCECE8870 /* CSFA_FindSimilarMatchMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DDE92D85459BB2F398FD0F4CD7970EB /* CSFA_FindSimilarMatchMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		123F2107E1B9652596A19D173C9C19A7 /* AZRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */; };
 		12678574DB7C0A5BD0AA695460825329 /* Pods-FaceAzure_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC42E709148764A94F9BC3104D64B76D /* Pods-FaceAzure_Tests-dummy.m */; };
-		1D9D815B1009B4D96775EE4818C8F88D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		3E7E0BC177D2A5BF5AF654A1468C8E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		678D5A2BD477B206834D7993EB6616B0 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = D3999471C6E7E9ACDA05ED312E1D3C46 /* ReplaceMe.m */; };
-		709E01A73CAAF609D2F79869F9AE97B7 /* Pods-FaceAzure_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C40DA1B636E65C2CCBFB974063010A /* Pods-FaceAzure_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76E47F812FCECC7B424AA0A3237ED8CC /* Pods-FaceAzure_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6D36AD87E28128FE6EF0DC140D18D /* Pods-FaceAzure_Example-dummy.m */; };
-		A67B208573ED39E154C80D3BE6ADBDED /* FaceAzure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9B0E51E448BFB7E54A7E7ED8F77B70 /* FaceAzure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A8865599798196B3B4318448BDB73AE2 /* FaceAzure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E184546049CC562200182F7CACAF2865 /* FaceAzure-dummy.m */; };
+		12C5E8201F03E3010545EAD0F00FA169 /* CSFA_TrainingStatusType.h in Headers */ = {isa = PBXBuildFile; fileRef = 816D17DC2BB594B45A1CF7EB12D25362 /* CSFA_TrainingStatusType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		160D5210E872F9750A6528552ABEC820 /* CSFA_GlassesType.m in Sources */ = {isa = PBXBuildFile; fileRef = E32ABB7CB194057F3B81FC2180A4E763 /* CSFA_GlassesType.m */; };
+		16C84F43CDFBA2044A221538434CE551 /* AZDefaultErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */; };
+		18BC3D7694C9733E63092CFC5F509837 /* CSFA_Accessory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBEE8EEF9C391F18874737412ABE7 /* CSFA_Accessory.m */; };
+		1B2EAF642DDA0EE96B113DD811BB6F8A /* CSFA_LargeFaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4BC044116E9140763DD5827CC98106 /* CSFA_LargeFaceList.m */; };
+		1BE1568D45E456CB69B45652E550D834 /* CSFA_UpdateFaceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 640518B6ED72BBEC28E8DD26B762F849 /* CSFA_UpdateFaceRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C98098E191742E5AEA90CF508433FB5 /* CSFA_ImageUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB616ADFEBB62CE071983A5CEF9238C7 /* CSFA_ImageUrl.m */; };
+		1D93B591433EDEC552486DA9B1E17E0E /* AZOperationError.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */; };
+		1F85DCE88D75B679F1CD36DBB27FA9BE /* AzureClientRuntime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */; };
+		1FE2478F272D125E1A634F810BE3C0D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
+		205BDDF93F7B2277EC7454E4451BF869 /* CSFA_UpdateFaceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 878693DEBCF0333D9C41BAA6EFD71614 /* CSFA_UpdateFaceRequest.m */; };
+		22E057CFD697BDCF862796831004D572 /* CSFA_SimilarFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4543398669D3ABE86E8749CA87840E6E /* CSFA_SimilarFace.m */; };
+		23D6A972E4127A8CADBA245842E99A5E /* CSFA_VerifyFaceToPersonRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 8846D80CF515C9562A9358FAE74C4DD5 /* CSFA_VerifyFaceToPersonRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C4268BD2F65A97E76C946F7F779CFA /* CSFA_PersonGroupPersons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2DFF88436E2DABA6E744D9859EF8C /* CSFA_PersonGroupPersons.m */; };
+		2693D1B7D89E774ECD07D11A39784E81 /* CSFA_GlassesType.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3D8F84CBD05F2DC983851FDD70EAD8 /* CSFA_GlassesType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		281E161282844E207D5C78F6120AEAF8 /* CSFA_LargePersonGroupPersons.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2DD503CF02296258B1FACF52E75845 /* CSFA_LargePersonGroupPersons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28E2E6B68F0F53AA540BDEDA6B841F69 /* CSFA_Hair.m in Sources */ = {isa = PBXBuildFile; fileRef = CED73968AD0242C95306310B9577F5A2 /* CSFA_Hair.m */; };
+		2B5E18A84649A9474D8857B45DB8BF69 /* CSFA_PersonGroupPersons.h in Headers */ = {isa = PBXBuildFile; fileRef = 3388FFB83805F72CC51407204EB34F10 /* CSFA_PersonGroupPersons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B6C3337CEDDD9AA2D7EBB6C4266D1A3 /* CSFA_Exposure.m in Sources */ = {isa = PBXBuildFile; fileRef = 3171E33EF33F233B4EEC79572F5BFD8E /* CSFA_Exposure.m */; };
+		2C87E8EDBA33BAED90ECCD5F30DFC1E2 /* CSFA_SimilarFace.h in Headers */ = {isa = PBXBuildFile; fileRef = C74E3681CF670FC931F0BA8453F31CAC /* CSFA_SimilarFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DA8C990CED961B91EDD2A698C9E3976 /* CSFA_FindSimilarMatchMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942DFBE32E7288D12F133D9C66A9D635 /* CSFA_FindSimilarMatchMode.m */; };
+		30E299B2D92F9EE8D222C5A014E229F0 /* CSFA_IdentifyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 912B06CEFC7F846463CA8AE5E4C79364 /* CSFA_IdentifyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		312E212B94714F9394BF531506F51DCE /* CSFA_APIError.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE145E159A5BB1D39645EBD8013993D /* CSFA_APIError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3146B5FF15149F514867D2005C9C4D90 /* CSFA_HairColorType.h in Headers */ = {isa = PBXBuildFile; fileRef = E0D6BE22261110ED4F3009E18D9ECA0F /* CSFA_HairColorType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		324580E350637836DE932E42FFD3104E /* CSFA_AccessoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = 9590AE99BEE581F8881D367D1F852915 /* CSFA_AccessoryType.m */; };
+		35DF8421622924B377E84CAA3C77B798 /* CSFA_PersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0295D99A3714A3BFF5937120E30A595B /* CSFA_PersonGroup.m */; };
+		36B581BC1D2F7C6C611E324CCD5205B0 /* CSFA_VerifyFaceToFaceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDE497EC5185785D0A122D0BBF69E28 /* CSFA_VerifyFaceToFaceRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36E2E3D261B1B79A698BDFAF1CDE0962 /* AZCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 422F6A3EEEBB2366C064AE9657CCED39 /* AZCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A0BC3E45AC9B337BB5173EDD0007BD5 /* CSFA_IdentifyResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC67A82C30566D336F1551BE35513C1 /* CSFA_IdentifyResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C6906A12F453CE2572030BB87B2EBC6 /* CSFA_IdentifyCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = B7AB7385A534ABC51BE3B0957357FE47 /* CSFA_IdentifyCandidate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E78C382219A0D3BFAE11FFBE65F7667 /* CSFA_Faces.m in Sources */ = {isa = PBXBuildFile; fileRef = D4434426486AEBDABC4CC64A81632534 /* CSFA_Faces.m */; };
+		42CD412D40A6899B30464151F785AC0E /* CSFA_Noise.h in Headers */ = {isa = PBXBuildFile; fileRef = 3436E3BBA71F3280B855C04AEEF62DF1 /* CSFA_Noise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		434CF26034276896B7197633A78F3EB2 /* CSFA_Emotion.h in Headers */ = {isa = PBXBuildFile; fileRef = 62B97F1E61CDB69B972DDD76AFF78AB1 /* CSFA_Emotion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		436D9FC6D21C86C37DF81F56E77D9A32 /* CSFA_FaceAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E210FE3A91FAC8DC4258317D6928D38 /* CSFA_FaceAttributes.m */; };
+		437F0D0D406063ACC3473F0C4986760C /* CSFA_TrainingStatusType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C28253C053CBB227D4EAF2DC6CAC174 /* CSFA_TrainingStatusType.m */; };
+		442FE36074DFFEA2F0F23B376077DF4D /* CSFA_LargeFaceList.h in Headers */ = {isa = PBXBuildFile; fileRef = B42BFE63248E55DA96A7DEF6AF5F508B /* CSFA_LargeFaceList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45D4BB0BA886170D3668EEE32E4EDF63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
+		45F717143D0EE16EDEFBDABB90CCD955 /* CSFA_APIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9671490FD90CD17BB88031DF2BB26BF1 /* CSFA_APIError.m */; };
+		46F26FF29C5FA25EC7BBAE2303D5F185 /* CSFA_GroupResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC919B85D86D3D00993BF4E6C78BE1D /* CSFA_GroupResult.m */; };
+		49506B9E0E2C4D8FCEDD66E325816D90 /* CSFA_PersistedFace.h in Headers */ = {isa = PBXBuildFile; fileRef = 470D4F8F37D44CDB0BC20258C416F4F7 /* CSFA_PersistedFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4964B409FB2E74FFB95375F3B2F25BB9 /* CSFA_FaceLists.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC46954104A912F102CF1E3C11AEC0 /* CSFA_FaceLists.m */; };
+		4AE94AF7186C9F00879B2C9D68041126 /* CSFA_HairColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 148ADFC7AB69A396D6E13B03CF076A9C /* CSFA_HairColor.m */; };
+		4BBB8810B1B7377E95C48F57E75F8BFB /* CSFA_BlurLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 223704E1034C2F1D65BFD6B32E2E08D8 /* CSFA_BlurLevel.m */; };
+		4C02C5C75C39EAA495890F2E540B40E4 /* CSFA_TrainingStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ACCC3219239389F5DC1A0EA407DB35C /* CSFA_TrainingStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537F5FE0505C87159FEBF1F889C0EA9D /* AzureTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */; };
+		56A2DFAE584CB58320E8E3665A9E94AF /* CSFA_Makeup.h in Headers */ = {isa = PBXBuildFile; fileRef = E3ACEC1F25D08080E5014C353036EB98 /* CSFA_Makeup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58243418988888071DDE701B5BFF0622 /* CSFA_Occlusion.h in Headers */ = {isa = PBXBuildFile; fileRef = E67124E6C077B4B084819F7EE0C82ABD /* CSFA_Occlusion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5859ED7224BD467380BDBCAAB1BD431A /* CSFA_DetectedFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D4083A6D08B1398DAC9720202AE41A /* CSFA_DetectedFace.m */; };
+		599DF71B826C3DCE7220FACD60A896E4 /* CSFA_Gender.h in Headers */ = {isa = PBXBuildFile; fileRef = AC6D13410C3144CBDF24177D177D943F /* CSFA_Gender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A3CDAA672B2034D45BB203D4862C85C /* AZRequestParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F415308B0C0B15856D1638E4B7B39EC /* AZRequestParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8CE3D3F6765DBD69947C588BDD7ACD /* CSFA_FaceClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = A44642BC634FF4BC8F59FF96BA8F02B6 /* CSFA_FaceClientService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E1D15A66D89817D4FFBF80590A963A0 /* AZRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2AAEA0560299B028D8F4CADB35FE07 /* AZRequestHelper.m */; };
+		60569BA3E86C5AE7FB22CF0C35EDA356 /* CSFA_FindSimilarRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D9AF5EAFB60C3E38B6FE37DDF5328F /* CSFA_FindSimilarRequest.m */; };
+		61B272BD791C732819EF5A21ED8BC5A9 /* AZJsonCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C03FF4316556F94CC30CA669F2591A7 /* AZJsonCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62B02286EC52B7773CA61364F5994A6C /* CSFA_ImageUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = D47193605F9075DAAFF756526D602014 /* CSFA_ImageUrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6402A3B28BE291774DD3DF4895CD9CED /* CSFA_FaceLandmarks.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EDA4F5F4C6D19475E5C87F65A86F4F /* CSFA_FaceLandmarks.m */; };
+		64055397BAE50F8072EFADC043712A65 /* CSFA_VerifyFaceToPersonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B892E700057396FBFFA60FD5FD43DD /* CSFA_VerifyFaceToPersonRequest.m */; };
+		6580A53E2728D096C39E4E7B11ECAF02 /* AZRequestHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C135D5FFB38ED9FA0B227628E81A48 /* AZRequestHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C7DC75535AEDEDEE8D13F255FCEBBCA /* AZJsonCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */; };
+		7065148843749B5D7D08C3FE8A377DD0 /* AzureDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A79019659894C76FFCA4530894195FCA /* AzureDate.m */; };
+		713DCD129E8FDD0A87776DE25565C4C5 /* CSFA_Error.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4369FD6E09E940E743A9D7EA92393 /* CSFA_Error.m */; };
+		72912A93A1F093128769F60A90EA2D9F /* CSFA_IdentifyCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1326BFD3E1A1565E5E2CF6773CDCD /* CSFA_IdentifyCandidate.m */; };
+		73CEB577E296945F3518317F7A92A0F2 /* CSFA_LargeFaceLists.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF919481780199F450537B1E448BDA5 /* CSFA_LargeFaceLists.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74E6560200CD3397478DE993619B018D /* CSFA_BlurLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 26538821245E7BDABCF4631278627DD0 /* CSFA_BlurLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		756ACFC47F118C6BD6C36ACC51BF831D /* CSFA_NoiseLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 13DBF413C05C9CC381F45BF3CCFD70C7 /* CSFA_NoiseLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76215408AA629372DA3B80581393D559 /* AZDefaultErrorModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 557C5E4486BB019431BC4006D3F676FB /* AZDefaultErrorModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EDA826B606D4914CD512D7606E2227E /* CSFA_NameAndUserDataContract.h in Headers */ = {isa = PBXBuildFile; fileRef = D58A519FDAFC63D5BDCBED837FF0FAD0 /* CSFA_NameAndUserDataContract.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FB5DE1228AB04F5E59B416B90D14A30 /* FaceAzure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9DB0B523C08C8C992A3A5C17E08D6 /* FaceAzure-dummy.m */; };
+		81BE152DEA518EE3861B50C7CC6C0CC2 /* CSFA_Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CE2AC57CCC42AFCE11F530A931758C /* CSFA_Gender.m */; };
+		81DD7F38C3E0AE4403B16B77DA23CABA /* CSFA_ExposureLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A67774F9D55B0DC4F5E9CB8D1E7C1593 /* CSFA_ExposureLevel.m */; };
+		82305C9B8B8DE09794D6022D0B7DB45E /* CSFA_Person.h in Headers */ = {isa = PBXBuildFile; fileRef = A71C8CE878C4CCCCF4823BD4BCC96641 /* CSFA_Person.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		836A6D628F285D83419971B7B077716B /* Pods-FaceAzure_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C40DA1B636E65C2CCBFB974063010A /* Pods-FaceAzure_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		889F34DA5B36E9D11393B27FAE35F74E /* CSFA_TrainingStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E4EDCF62B1B88A4B9396432F8678E0 /* CSFA_TrainingStatus.m */; };
+		894166FAFFA1C269F1E48E26C71385E0 /* CSFA_GroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1934489EEA1BACCB1BC00085963827A6 /* CSFA_GroupRequest.m */; };
+		8F0F7E9D014F0F87D0783F9CF6444576 /* CSFA_PersonGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBB1F76CAB669F8FFB7945926524CF /* CSFA_PersonGroups.m */; };
+		93C9F97D5FCF33550A5B1423A32303C2 /* CSFA_GroupResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AF3C7FB169B3B6401D4731C720B444E /* CSFA_GroupResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		965A6D5876CE1E04F9D162F63A3F08F2 /* CSFA_FaceAttributeType.h in Headers */ = {isa = PBXBuildFile; fileRef = D736E416C5388496872D6FA762715B64 /* CSFA_FaceAttributeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A195BDC105BC2CA1BC18199E48789A4 /* CSFA_FaceClientService.m in Sources */ = {isa = PBXBuildFile; fileRef = AB934BA16ECE8633024D556A8B76F0F0 /* CSFA_FaceClientService.m */; };
+		A0CC70CA0A9C576EA5A8DF00C475017D /* AZCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 974A14947F618C253CAB4BE258DC33D2 /* AZCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A180906C4CF09CBB882DFE6CDF54FBBC /* CSFA_FaceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F0458794B3EC9E8D4D875AEB968FFF /* CSFA_FaceList.m */; };
+		AAB315978BBD58051D2A3A926ABDC78D /* CSFA_FindSimilarRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DD661C8492EF02926C1B358773312150 /* CSFA_FindSimilarRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABC54DFCCC9AEBFE30BE73EA2C6B9830 /* CSFA_LargeFaceLists.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C76F714DEA816E9B473B83463D2C69 /* CSFA_LargeFaceLists.m */; };
+		ACD32FEE63B54644CF68C102C9987C43 /* FaceAzure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C399CDFE7A5671FE487DA6B40EEBA5A2 /* FaceAzure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08D793B950CEB9C5320B42BAFFB0969 /* CSFA_PersistedFace.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A1CA6ED178C32B26936084A26392C /* CSFA_PersistedFace.m */; };
+		B18EBC626B12EA580FE0F9956E50324F /* CSFA_Occlusion.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D257785E6196FED4AF5361EBC32796 /* CSFA_Occlusion.m */; };
+		B472417767D39E4F44DBAD38EA9EEBDF /* CSFA_Accessory.h in Headers */ = {isa = PBXBuildFile; fileRef = 349FE7E1683E280CBF5B43060BA13AA5 /* CSFA_Accessory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6E68AF6B1D4912F742A2AB43F3F1B5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
+		B767AB1BAFA793464591824731F177EC /* CSFA_FaceAttributeType.m in Sources */ = {isa = PBXBuildFile; fileRef = D69FB72825930DE6D1D470E8243AC340 /* CSFA_FaceAttributeType.m */; };
+		BB0A8F50C40AA6B79039B3F6142C11F5 /* CSFA_VerifyFaceToFaceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F997173D856746B8E1A637A6308E7186 /* CSFA_VerifyFaceToFaceRequest.m */; };
+		BDC5AF0A0E4EA2DF861BE957886FB57B /* CSFA_LargePersonGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 92E2445D0CBF70454CE70A53C8DD09E8 /* CSFA_LargePersonGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDDE370DD28DE05BDF9EABFEC347B32A /* CSFA_Error.h in Headers */ = {isa = PBXBuildFile; fileRef = F806B79AAA4E93005A4A5A7F4D679D9E /* CSFA_Error.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF13C7EE8CBDDA01909DD53B2E65E717 /* CSFA_HairColorType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE095F187D892EA53856BC59B789AA4 /* CSFA_HairColorType.m */; };
+		C091C4FA861219338F46CE1BB6D6DC7E /* CSFA_Blur.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F742689C03BE201DFBBDDDB7D783EF5 /* CSFA_Blur.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0C266B76D10A90A012D4CBDDE5A5DA2 /* CSFA_Exposure.h in Headers */ = {isa = PBXBuildFile; fileRef = 6950432D545F41042F767DEF3D1D6B27 /* CSFA_Exposure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0CA4D06410919FD54DAB36A1C97E5AD /* AzureTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3F45A133D0FE5A272C6FCAB3D32C5D8 /* CSFA_FacialHair.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A4C09B03F2DDDB456A4DF0B82D9482 /* CSFA_FacialHair.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C51520896CC08B93E46F80C3DBD98DE2 /* CSFA_IdentifyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E653B0466A661CACF4D6E074F8F7A0E1 /* CSFA_IdentifyResult.m */; };
 		C7AF4917595B9D1D22FEABE293908E99 /* Pods-FaceAzure_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE2463AEF1377538E72734ED1C277E0 /* Pods-FaceAzure_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D91F504F4F311DC82A03A1BA68118BC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		C8BC731D9D408234D7606D51E6F9CDFF /* CSFA_LargePersonGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E5FA37E49CC4B859E4825A007762D3 /* CSFA_LargePersonGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA6BC1810E9B3BBD18A714B415C9D2C3 /* CSFA_Hair.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5C0959B6B15955514B855A2A3A8F47 /* CSFA_Hair.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE473EB3F1939D26BD523A5C822781FA /* CSFA_VerifyResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0AD858C26791BBD564B85C6099EB63 /* CSFA_VerifyResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF66FA0C88B7CC323D11DCF5B315FABC /* CSFA_Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAE1C709EB8340D42721A4C1722D0A /* CSFA_Blur.m */; };
+		D18817221C253D37B2A6E882A4DD6A22 /* CSFA_Faces.h in Headers */ = {isa = PBXBuildFile; fileRef = DAFC9D29A801CA5033656AC4CCA3C14E /* CSFA_Faces.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D262D11ABB70F549F774F246AD08E38B /* CSFA_LargePersonGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF3700AF5DAAE193E0AC0240BDF6C15 /* CSFA_LargePersonGroups.m */; };
+		D523AD7A6AB91554697517EDBC0456C1 /* CSFA_LargePersonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F91464DBA30C1A982DFF8D82E4C81D79 /* CSFA_LargePersonGroup.m */; };
+		D62EDEC8D2D3E7CA76C7A3B56B07A073 /* CSFA_FaceLandmarks.h in Headers */ = {isa = PBXBuildFile; fileRef = EF2775E267F887BBA257DE96083D3CF9 /* CSFA_FaceLandmarks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D67320A90DCF0D7E114FFF12884774D6 /* CSFA_NoiseLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8518DA00F691F8A0131F090CEEA5B076 /* CSFA_NoiseLevel.m */; };
+		D6BAF8C0007A6123C25F8C7C964B7D9C /* CSFA_Makeup.m in Sources */ = {isa = PBXBuildFile; fileRef = 110758D4A6CAB659ACDC368840BFF725 /* CSFA_Makeup.m */; };
+		D91F504F4F311DC82A03A1BA68118BC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
+		DD7D83BC51E6D54F0D0FD43FC58F1DB5 /* CSFA_PersonGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 29BCAC919FECFDAB03A601557C5B4464 /* CSFA_PersonGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDDD3BB650A3EDCA892C119705CE3A4A /* CSFA_GroupRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 53DD726090EE1772308E60E43E1C426B /* CSFA_GroupRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2E02506324D8AEE5C9095C84DDAFFDD /* CSFA_FaceList.h in Headers */ = {isa = PBXBuildFile; fileRef = 36AF28698F079EC97A1F04FEA5DE4D16 /* CSFA_FaceList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2E29C66EFFFAF573B10D8DACBBD0F19 /* CSFA_Noise.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B9C6EC963F90471BEBD3F02C548EFE /* CSFA_Noise.m */; };
+		E3FE226539CD9436AC9C77A478C40283 /* CSFA_FaceRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE0265A0CD8ED3C6C71312C73D470B5 /* CSFA_FaceRectangle.m */; };
+		E4C7BD7E5323660296A4D3F76CBACCF1 /* CSFA_IdentifyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA16AE0093CCB325F8C7638C5201516 /* CSFA_IdentifyRequest.m */; };
+		E5940EEA44DE6B34F1CE2CC9F7F00E5D /* CSFA_LargePersonGroupPersons.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA973EA644EA05C8EB84E7952A359F6 /* CSFA_LargePersonGroupPersons.m */; };
+		E68CDB43E40CF1484C61540974423455 /* CSFA_VerifyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B023FC725F6AA9F8FF989798A8559 /* CSFA_VerifyResult.m */; };
+		E6B9F01CBCE10B62F8F296BC011D11E4 /* CSFA_PersonGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = A2B42B12640285D04AC2C8CC07B91D99 /* CSFA_PersonGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E985C90C933B17C11DE467028888886D /* CSFA_NameAndUserDataContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 95743E2EC8C25BEE2EE1BF744EDE8389 /* CSFA_NameAndUserDataContract.m */; };
+		EAD4017712F93816B6CECFE9A00DAE1D /* CSFA_HairColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD16F9C5EC6D93DA8E26698E4BACC0C /* CSFA_HairColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECC4C8C1295DEDC7D665E4DC5F1B166A /* CSFA_AccessoryType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4862307F5E864F97254D62D5BFE2B0 /* CSFA_AccessoryType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F10EF0C216732075A881A2FE0E010E66 /* CSFA_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A32C4F3CA98E3C6B1CF3E83C654ECACC /* CSFA_Person.m */; };
+		F11E39A2841D2690C9C7E8FD4DF4CBA6 /* CSFA_FacialHair.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD898AE446E3B8A00889B9DB59D15C7 /* CSFA_FacialHair.m */; };
+		F3C574D04DB1F291BFB79E6454C270BF /* CSFA_Coordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = 25EFC6FCE844E56325079A48BC041242 /* CSFA_Coordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F51C40288F87A4F5224815CAC5FF02CC /* CSFA_HeadPose.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD081F2306515A4CE172C2E9458DDD1 /* CSFA_HeadPose.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F76F35A08AB8F68F5AE3637CB9EA3ABB /* CSFA_FaceLists.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ECAB608E20802905D819DA59594C4DF /* CSFA_FaceLists.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA398958B4E3C7E62861EB501256A2F7 /* CSFA_ExposureLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = A8EBDC82662A81170F1F0FBB0CE0376A /* CSFA_ExposureLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAD76B3F982D5A85B9C4B3CBBA9AE4FE /* AZOperationError.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8F30502D6C67FA1DBA85306C40C4FC /* AZOperationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC63BE348B5EE4436A8C72C69FC704E8 /* CSFA_Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6654996D5EEC9E22AEE7C821C75763 /* CSFA_Coordinate.m */; };
+		FEAF352F474F5B127C7DF59314908379 /* CSFA_Emotion.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BA2F77D213D436EA755C1A0BF3F3D4 /* CSFA_Emotion.m */; };
+		FF6DFD7BA4D65DABCD1F257B33C41E75 /* CSFA_HeadPose.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B63B4CA457DDF68A92D48783C11F7F /* CSFA_HeadPose.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,62 +156,221 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F2A5AC2FC5ED37384E42DA715DF40CE1;
+			remoteGlobalIDString = 7AAF09017FF5A61633950C783B686F8C;
 			remoteInfo = "Pods-FaceAzure_Example";
 		};
-		675F741AF80999A10955EDC4F3A54ACA /* PBXContainerItemProxy */ = {
+		5724016DF2266D23B20B824F549DE723 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 03C9772D722DE7080B984E8E027EF4B4;
+			remoteGlobalIDString = AC0A03AA3DC5ECF2C48C97CA6E55BA8A;
 			remoteInfo = FaceAzure;
+		};
+		8F138C3ECCC95DC02EF00292884D0381 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5144293FEADED3E02A070EE9163F6B8E;
+			remoteInfo = AzureClientRuntime;
+		};
+		99D1B763D87E6D85AA5B3B487C093E05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5144293FEADED3E02A070EE9163F6B8E;
+			remoteInfo = AzureClientRuntime;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0295D99A3714A3BFF5937120E30A595B /* CSFA_PersonGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_PersonGroup.m; sourceTree = "<group>"; };
 		0567AB3080F8C60C5CEF18ABF3C15EEC /* Pods-FaceAzure_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FaceAzure_Example-resources.sh"; sourceTree = "<group>"; };
+		05CCC91E3E0661A02D4844894F01070A /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = FaceAzure/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		0AC67A82C30566D336F1551BE35513C1 /* CSFA_IdentifyResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_IdentifyResult.h; sourceTree = "<group>"; };
+		0CBEC032A8F4E8507A6C70F4719F9896 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3C89533D265318AF51D74980D83D10 /* Pods-FaceAzure_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FaceAzure_Example.modulemap"; sourceTree = "<group>"; };
+		0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AzureClientRuntime.h; sourceTree = "<group>"; };
+		0EFE16BC314ED01DFE42B764E50EC251 /* FaceAzure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FaceAzure.modulemap; sourceTree = "<group>"; };
+		110758D4A6CAB659ACDC368840BFF725 /* CSFA_Makeup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Makeup.m; sourceTree = "<group>"; };
+		13DBF413C05C9CC381F45BF3CCFD70C7 /* CSFA_NoiseLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_NoiseLevel.h; sourceTree = "<group>"; };
+		13E5FA37E49CC4B859E4825A007762D3 /* CSFA_LargePersonGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargePersonGroup.h; sourceTree = "<group>"; };
+		148ADFC7AB69A396D6E13B03CF076A9C /* CSFA_HairColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_HairColor.m; sourceTree = "<group>"; };
+		1934489EEA1BACCB1BC00085963827A6 /* CSFA_GroupRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_GroupRequest.m; sourceTree = "<group>"; };
+		19C135D5FFB38ED9FA0B227628E81A48 /* AZRequestHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZRequestHelper.h; path = AzureClientRuntime/Classes/AZRequestHelper.h; sourceTree = "<group>"; };
+		19C76F714DEA816E9B473B83463D2C69 /* CSFA_LargeFaceLists.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_LargeFaceLists.m; sourceTree = "<group>"; };
+		1A5C0959B6B15955514B855A2A3A8F47 /* CSFA_Hair.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Hair.h; sourceTree = "<group>"; };
+		1BF3700AF5DAAE193E0AC0240BDF6C15 /* CSFA_LargePersonGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_LargePersonGroups.m; sourceTree = "<group>"; };
+		1EDE497EC5185785D0A122D0BBF69E28 /* CSFA_VerifyFaceToFaceRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_VerifyFaceToFaceRequest.h; sourceTree = "<group>"; };
 		21A6D36AD87E28128FE6EF0DC140D18D /* Pods-FaceAzure_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FaceAzure_Example-dummy.m"; sourceTree = "<group>"; };
-		2EA3BC09A87732C0121AAADE234EB9CA /* Pods_FaceAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FaceAzure_Example.framework; path = "Pods-FaceAzure_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		33FE2368959001C6A7B304B67E6532B6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		223704E1034C2F1D65BFD6B32E2E08D8 /* CSFA_BlurLevel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_BlurLevel.m; sourceTree = "<group>"; };
+		25EFC6FCE844E56325079A48BC041242 /* CSFA_Coordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Coordinate.h; sourceTree = "<group>"; };
+		26538821245E7BDABCF4631278627DD0 /* CSFA_BlurLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_BlurLevel.h; sourceTree = "<group>"; };
+		29BCAC919FECFDAB03A601557C5B4464 /* CSFA_PersonGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_PersonGroup.h; sourceTree = "<group>"; };
+		2AE0265A0CD8ED3C6C71312C73D470B5 /* CSFA_FaceRectangle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceRectangle.m; sourceTree = "<group>"; };
+		2C03FF4316556F94CC30CA669F2591A7 /* AZJsonCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZJsonCoder.h; path = AzureClientRuntime/Classes/AZJsonCoder.h; sourceTree = "<group>"; };
+		2C8F30502D6C67FA1DBA85306C40C4FC /* AZOperationError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZOperationError.h; path = AzureClientRuntime/Classes/AZOperationError.h; sourceTree = "<group>"; };
+		2ECAB608E20802905D819DA59594C4DF /* CSFA_FaceLists.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FaceLists.h; sourceTree = "<group>"; };
+		3171E33EF33F233B4EEC79572F5BFD8E /* CSFA_Exposure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Exposure.m; sourceTree = "<group>"; };
+		32CE2AC57CCC42AFCE11F530A931758C /* CSFA_Gender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Gender.m; sourceTree = "<group>"; };
+		3388FFB83805F72CC51407204EB34F10 /* CSFA_PersonGroupPersons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_PersonGroupPersons.h; sourceTree = "<group>"; };
+		3436E3BBA71F3280B855C04AEEF62DF1 /* CSFA_Noise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Noise.h; sourceTree = "<group>"; };
+		349FE7E1683E280CBF5B43060BA13AA5 /* CSFA_Accessory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Accessory.h; sourceTree = "<group>"; };
+		35DC89C5D876783244F624783D72BE66 /* FaceAzure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceAzure.xcconfig; sourceTree = "<group>"; };
+		36AF28698F079EC97A1F04FEA5DE4D16 /* CSFA_FaceList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FaceList.h; sourceTree = "<group>"; };
 		40185D0E40C595D254EB1D3667C905DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422F6A3EEEBB2366C064AE9657CCED39 /* AZCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZCoder.h; path = AzureClientRuntime/Classes/AZCoder.h; sourceTree = "<group>"; };
 		42D2CC0920A463511770A15B91670995 /* Pods-FaceAzure_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FaceAzure_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		438F0DDCECA412C1CB5D28B11822D70B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BD2DF238A7CDC0B85D8BF15D3998BD /* CSFA_FaceAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FaceAttributes.h; sourceTree = "<group>"; };
+		4543398669D3ABE86E8749CA87840E6E /* CSFA_SimilarFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_SimilarFace.m; sourceTree = "<group>"; };
 		457B25E1760BBC6DA057E9C156F81B24 /* Pods-FaceAzure_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FaceAzure_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4DE82E60C4ADFABDD957CC0F7DE420A2 /* Pods_FaceAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FaceAzure_Tests.framework; path = "Pods-FaceAzure_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59206D5324748D952003A501CAD0D2E1 /* FaceAzure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FaceAzure.framework; path = FaceAzure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		470D4F8F37D44CDB0BC20258C416F4F7 /* CSFA_PersistedFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_PersistedFace.h; sourceTree = "<group>"; };
+		47E82C87446C5CE9FEFE35CFB433737E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		48B6C390914D3AEE4CEC47ABB46798AB /* AzureClientRuntime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AzureClientRuntime.modulemap; sourceTree = "<group>"; };
+		4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureTypes.h; path = AzureClientRuntime/Classes/AzureTypes.h; sourceTree = "<group>"; };
+		4AA973EA644EA05C8EB84E7952A359F6 /* CSFA_LargePersonGroupPersons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_LargePersonGroupPersons.m; sourceTree = "<group>"; };
+		4ACCC3219239389F5DC1A0EA407DB35C /* CSFA_TrainingStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_TrainingStatus.h; sourceTree = "<group>"; };
+		4C28253C053CBB227D4EAF2DC6CAC174 /* CSFA_TrainingStatusType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_TrainingStatusType.m; sourceTree = "<group>"; };
+		4F415308B0C0B15856D1638E4B7B39EC /* AZRequestParameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZRequestParameters.h; path = AzureClientRuntime/Classes/AZRequestParameters.h; sourceTree = "<group>"; };
+		53DD726090EE1772308E60E43E1C426B /* CSFA_GroupRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_GroupRequest.h; sourceTree = "<group>"; };
+		54B63B4CA457DDF68A92D48783C11F7F /* CSFA_HeadPose.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_HeadPose.m; sourceTree = "<group>"; };
+		557C5E4486BB019431BC4006D3F676FB /* AZDefaultErrorModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZDefaultErrorModel.h; path = AzureClientRuntime/Classes/AZDefaultErrorModel.h; sourceTree = "<group>"; };
+		55E4EDCF62B1B88A4B9396432F8678E0 /* CSFA_TrainingStatus.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_TrainingStatus.m; sourceTree = "<group>"; };
 		5985BD42FFE41B49175785B55F9148EE /* Pods-FaceAzure_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FaceAzure_Example-frameworks.sh"; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5AF3C7FB169B3B6401D4731C720B444E /* CSFA_GroupResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_GroupResult.h; sourceTree = "<group>"; };
+		5CE095F187D892EA53856BC59B789AA4 /* CSFA_HairColorType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_HairColorType.m; sourceTree = "<group>"; };
+		5DD081F2306515A4CE172C2E9458DDD1 /* CSFA_HeadPose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_HeadPose.h; sourceTree = "<group>"; };
+		5DDE92D85459BB2F398FD0F4CD7970EB /* CSFA_FindSimilarMatchMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FindSimilarMatchMode.h; sourceTree = "<group>"; };
+		5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZRequestParameters.m; path = AzureClientRuntime/Classes/AZRequestParameters.m; sourceTree = "<group>"; };
+		607B7027D2BF52FDC42F8BF7437FE265 /* Pods_FaceAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60D257785E6196FED4AF5361EBC32796 /* CSFA_Occlusion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Occlusion.m; sourceTree = "<group>"; };
+		60D4083A6D08B1398DAC9720202AE41A /* CSFA_DetectedFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_DetectedFace.m; sourceTree = "<group>"; };
+		62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureTypes.m; path = AzureClientRuntime/Classes/AzureTypes.m; sourceTree = "<group>"; };
+		62B97F1E61CDB69B972DDD76AFF78AB1 /* CSFA_Emotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Emotion.h; sourceTree = "<group>"; };
+		640518B6ED72BBEC28E8DD26B762F849 /* CSFA_UpdateFaceRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_UpdateFaceRequest.h; sourceTree = "<group>"; };
+		6950432D545F41042F767DEF3D1D6B27 /* CSFA_Exposure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Exposure.h; sourceTree = "<group>"; };
+		6AE9DB0B523C08C8C992A3A5C17E08D6 /* FaceAzure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FaceAzure-dummy.m"; sourceTree = "<group>"; };
+		6B4862307F5E864F97254D62D5BFE2B0 /* CSFA_AccessoryType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_AccessoryType.h; sourceTree = "<group>"; };
+		6EF2DFF88436E2DABA6E744D9859EF8C /* CSFA_PersonGroupPersons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_PersonGroupPersons.m; sourceTree = "<group>"; };
+		6F1B023FC725F6AA9F8FF989798A8559 /* CSFA_VerifyResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_VerifyResult.m; sourceTree = "<group>"; };
+		6F742689C03BE201DFBBDDDB7D783EF5 /* CSFA_Blur.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Blur.h; sourceTree = "<group>"; };
 		75AF5437E0CFBD932CBEFE13861CCA71 /* Pods-FaceAzure_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FaceAzure_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		816D17DC2BB594B45A1CF7EB12D25362 /* CSFA_TrainingStatusType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_TrainingStatusType.h; sourceTree = "<group>"; };
 		849338DC03900695D72EC7DB7247B655 /* Pods-FaceAzure_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FaceAzure_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8518DA00F691F8A0131F090CEEA5B076 /* CSFA_NoiseLevel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_NoiseLevel.m; sourceTree = "<group>"; };
+		86F0458794B3EC9E8D4D875AEB968FFF /* CSFA_FaceList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceList.m; sourceTree = "<group>"; };
+		878693DEBCF0333D9C41BAA6EFD71614 /* CSFA_UpdateFaceRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_UpdateFaceRequest.m; sourceTree = "<group>"; };
+		8846D80CF515C9562A9358FAE74C4DD5 /* CSFA_VerifyFaceToPersonRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_VerifyFaceToPersonRequest.h; sourceTree = "<group>"; };
+		8A6654996D5EEC9E22AEE7C821C75763 /* CSFA_Coordinate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Coordinate.m; sourceTree = "<group>"; };
 		8C21BF828C3C9D96FA435BE63AAD6337 /* Pods-FaceAzure_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FaceAzure_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureDate.h; path = AzureClientRuntime/Classes/AzureDate.h; sourceTree = "<group>"; };
+		8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AzureClientRuntime.xcconfig; sourceTree = "<group>"; };
 		90BA130C4A54C8F44E1417ADA609A7CE /* Pods-FaceAzure_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FaceAzure_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9C9B0E51E448BFB7E54A7E7ED8F77B70 /* FaceAzure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaceAzure-umbrella.h"; sourceTree = "<group>"; };
+		912B06CEFC7F846463CA8AE5E4C79364 /* CSFA_IdentifyRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_IdentifyRequest.h; sourceTree = "<group>"; };
+		92E2445D0CBF70454CE70A53C8DD09E8 /* CSFA_LargePersonGroups.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargePersonGroups.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		942DFBE32E7288D12F133D9C66A9D635 /* CSFA_FindSimilarMatchMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FindSimilarMatchMode.m; sourceTree = "<group>"; };
+		95743E2EC8C25BEE2EE1BF744EDE8389 /* CSFA_NameAndUserDataContract.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_NameAndUserDataContract.m; sourceTree = "<group>"; };
+		9590AE99BEE581F8881D367D1F852915 /* CSFA_AccessoryType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_AccessoryType.m; sourceTree = "<group>"; };
+		9671490FD90CD17BB88031DF2BB26BF1 /* CSFA_APIError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_APIError.m; sourceTree = "<group>"; };
+		974A14947F618C253CAB4BE258DC33D2 /* AZCodable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZCodable.h; path = AzureClientRuntime/Classes/AZCodable.h; sourceTree = "<group>"; };
+		99C09CE897F271F6E9F055B9EE1AFD80 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E210FE3A91FAC8DC4258317D6928D38 /* CSFA_FaceAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceAttributes.m; sourceTree = "<group>"; };
 		9EDDC0F1D707906AEA052DC0FF0632CB /* Pods-FaceAzure_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FaceAzure_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A2B42B12640285D04AC2C8CC07B91D99 /* CSFA_PersonGroups.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_PersonGroups.h; sourceTree = "<group>"; };
+		A32C4F3CA98E3C6B1CF3E83C654ECACC /* CSFA_Person.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Person.m; sourceTree = "<group>"; };
+		A44642BC634FF4BC8F59FF96BA8F02B6 /* CSFA_FaceClientService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSFA_FaceClientService.h; path = FaceAzure/Classes/CSFA_FaceClientService.h; sourceTree = "<group>"; };
+		A4CBB1F76CAB669F8FFB7945926524CF /* CSFA_PersonGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_PersonGroups.m; sourceTree = "<group>"; };
+		A67774F9D55B0DC4F5E9CB8D1E7C1593 /* CSFA_ExposureLevel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_ExposureLevel.m; sourceTree = "<group>"; };
+		A6A7CF8F8ADB074BF1078E9872DEDDD9 /* FaceAzure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = FaceAzure.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6DC46954104A912F102CF1E3C11AEC0 /* CSFA_FaceLists.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceLists.m; sourceTree = "<group>"; };
+		A71C8CE878C4CCCCF4823BD4BCC96641 /* CSFA_Person.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Person.h; sourceTree = "<group>"; };
+		A79019659894C76FFCA4530894195FCA /* AzureDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureDate.m; path = AzureClientRuntime/Classes/AzureDate.m; sourceTree = "<group>"; };
+		A8EBDC82662A81170F1F0FBB0CE0376A /* CSFA_ExposureLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_ExposureLevel.h; sourceTree = "<group>"; };
+		AB3D8F84CBD05F2DC983851FDD70EAD8 /* CSFA_GlassesType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_GlassesType.h; sourceTree = "<group>"; };
+		AB934BA16ECE8633024D556A8B76F0F0 /* CSFA_FaceClientService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSFA_FaceClientService.m; path = FaceAzure/Classes/CSFA_FaceClientService.m; sourceTree = "<group>"; };
+		ABE145E159A5BB1D39645EBD8013993D /* CSFA_APIError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_APIError.h; sourceTree = "<group>"; };
+		AC6D13410C3144CBDF24177D177D943F /* CSFA_Gender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Gender.h; sourceTree = "<group>"; };
+		AEF919481780199F450537B1E448BDA5 /* CSFA_LargeFaceLists.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargeFaceLists.h; sourceTree = "<group>"; };
+		AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZOperationError.m; path = AzureClientRuntime/Classes/AZOperationError.m; sourceTree = "<group>"; };
+		B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AzureClientRuntime-dummy.m"; sourceTree = "<group>"; };
 		B0C40DA1B636E65C2CCBFB974063010A /* Pods-FaceAzure_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FaceAzure_Example-umbrella.h"; sourceTree = "<group>"; };
-		BC4FFC640CABB77B35B378661FCFA680 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BDCC77068FBB22B2A6BA1D57A3742C59 /* FaceAzure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaceAzure-prefix.pch"; sourceTree = "<group>"; };
-		BE361351002282C1C643514421E05578 /* FaceAzure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FaceAzure.modulemap; sourceTree = "<group>"; };
+		B16F945000F0FF825586EFFD7F32950D /* FaceAzure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FaceAzure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3EDA4F5F4C6D19475E5C87F65A86F4F /* CSFA_FaceLandmarks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceLandmarks.m; sourceTree = "<group>"; };
+		B42BFE63248E55DA96A7DEF6AF5F508B /* CSFA_LargeFaceList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargeFaceList.h; sourceTree = "<group>"; };
+		B6B892E700057396FBFFA60FD5FD43DD /* CSFA_VerifyFaceToPersonRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_VerifyFaceToPersonRequest.m; sourceTree = "<group>"; };
+		B741DF7D5E30F583B3034718C2713938 /* CSFA_DetectedFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_DetectedFace.h; sourceTree = "<group>"; };
+		B7AB7385A534ABC51BE3B0957357FE47 /* CSFA_IdentifyCandidate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_IdentifyCandidate.h; sourceTree = "<group>"; };
+		B8CEC2DD99FB7A8EFBB5146BE4F11E9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B94A1CA6ED178C32B26936084A26392C /* CSFA_PersistedFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_PersistedFace.m; sourceTree = "<group>"; };
+		BCA16AE0093CCB325F8C7638C5201516 /* CSFA_IdentifyRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_IdentifyRequest.m; sourceTree = "<group>"; };
+		BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZDefaultErrorModel.m; path = AzureClientRuntime/Classes/AZDefaultErrorModel.m; sourceTree = "<group>"; };
+		BFD898AE446E3B8A00889B9DB59D15C7 /* CSFA_FacialHair.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FacialHair.m; sourceTree = "<group>"; };
+		C2D4369FD6E09E940E743A9D7EA92393 /* CSFA_Error.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Error.m; sourceTree = "<group>"; };
 		C356C406217B0F5ED211DF81B0694E35 /* Pods-FaceAzure_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FaceAzure_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		CDF4F652FA8D3CC15522E9B591E3242A /* FaceAzure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceAzure.xcconfig; sourceTree = "<group>"; };
+		C399CDFE7A5671FE487DA6B40EEBA5A2 /* FaceAzure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaceAzure-umbrella.h"; sourceTree = "<group>"; };
+		C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C695CAE25DB695FAE83FE0C68DFE11B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74E3681CF670FC931F0BA8453F31CAC /* CSFA_SimilarFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_SimilarFace.h; sourceTree = "<group>"; };
+		C7B9C6EC963F90471BEBD3F02C548EFE /* CSFA_Noise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Noise.m; sourceTree = "<group>"; };
+		CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZJsonCoder.m; path = AzureClientRuntime/Classes/AZJsonCoder.m; sourceTree = "<group>"; };
+		CDAEE3350DB2CAF8CF45D830711B3E3E /* Pods_FaceAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAzure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD16F9C5EC6D93DA8E26698E4BACC0C /* CSFA_HairColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_HairColor.h; sourceTree = "<group>"; };
+		CE0AD858C26791BBD564B85C6099EB63 /* CSFA_VerifyResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_VerifyResult.h; sourceTree = "<group>"; };
+		CED73968AD0242C95306310B9577F5A2 /* CSFA_Hair.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Hair.m; sourceTree = "<group>"; };
 		D066570364E6FFE4EA7706F967990A07 /* Pods-FaceAzure_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FaceAzure_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D12A1121F356F074B4669B8FC0EE02F2 /* Pods-FaceAzure_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FaceAzure_Tests.modulemap"; sourceTree = "<group>"; };
-		D3999471C6E7E9ACDA05ED312E1D3C46 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = FaceAzure/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		D4434426486AEBDABC4CC64A81632534 /* CSFA_Faces.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Faces.m; sourceTree = "<group>"; };
+		D47193605F9075DAAFF756526D602014 /* CSFA_ImageUrl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_ImageUrl.h; sourceTree = "<group>"; };
+		D58A519FDAFC63D5BDCBED837FF0FAD0 /* CSFA_NameAndUserDataContract.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_NameAndUserDataContract.h; sourceTree = "<group>"; };
+		D5BAE1C709EB8340D42721A4C1722D0A /* CSFA_Blur.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Blur.m; sourceTree = "<group>"; };
+		D69FB72825930DE6D1D470E8243AC340 /* CSFA_FaceAttributeType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceAttributeType.m; sourceTree = "<group>"; };
+		D736E416C5388496872D6FA762715B64 /* CSFA_FaceAttributeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FaceAttributeType.h; sourceTree = "<group>"; };
+		DAFC9D29A801CA5033656AC4CCA3C14E /* CSFA_Faces.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Faces.h; sourceTree = "<group>"; };
+		DBAC4C201E274090917B9363B3F97AAF /* FaceAzure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaceAzure-prefix.pch"; sourceTree = "<group>"; };
 		DC42E709148764A94F9BC3104D64B76D /* Pods-FaceAzure_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FaceAzure_Tests-dummy.m"; sourceTree = "<group>"; };
-		DEEF7A31CBD5CAD3A4AE83CEE6CAF108 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		E184546049CC562200182F7CACAF2865 /* FaceAzure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FaceAzure-dummy.m"; sourceTree = "<group>"; };
+		DCC1326BFD3E1A1565E5E2CF6773CDCD /* CSFA_IdentifyCandidate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_IdentifyCandidate.m; sourceTree = "<group>"; };
+		DD661C8492EF02926C1B358773312150 /* CSFA_FindSimilarRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FindSimilarRequest.h; sourceTree = "<group>"; };
+		DF4BC044116E9140763DD5827CC98106 /* CSFA_LargeFaceList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_LargeFaceList.m; sourceTree = "<group>"; };
+		E0D6BE22261110ED4F3009E18D9ECA0F /* CSFA_HairColorType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_HairColorType.h; sourceTree = "<group>"; };
+		E1CBFAC896F8EE71C3FDB740513BF144 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E32ABB7CB194057F3B81FC2180A4E763 /* CSFA_GlassesType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_GlassesType.m; sourceTree = "<group>"; };
+		E3ACEC1F25D08080E5014C353036EB98 /* CSFA_Makeup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Makeup.h; sourceTree = "<group>"; };
+		E3D9AF5EAFB60C3E38B6FE37DDF5328F /* CSFA_FindSimilarRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FindSimilarRequest.m; sourceTree = "<group>"; };
 		E5ACEC86E509877437B76EA05C12F2E0 /* Pods-FaceAzure_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FaceAzure_Tests-resources.sh"; sourceTree = "<group>"; };
-		E8293FF5D1E575A4F1B36CD054E4D5A2 /* FaceAzure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = FaceAzure.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E5BA2F77D213D436EA755C1A0BF3F3D4 /* CSFA_Emotion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Emotion.m; sourceTree = "<group>"; };
+		E653B0466A661CACF4D6E074F8F7A0E1 /* CSFA_IdentifyResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_IdentifyResult.m; sourceTree = "<group>"; };
+		E67124E6C077B4B084819F7EE0C82ABD /* CSFA_Occlusion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Occlusion.h; sourceTree = "<group>"; };
+		EC2AAEA0560299B028D8F4CADB35FE07 /* AZRequestHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZRequestHelper.m; path = AzureClientRuntime/Classes/AZRequestHelper.m; sourceTree = "<group>"; };
 		ECE2463AEF1377538E72734ED1C277E0 /* Pods-FaceAzure_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FaceAzure_Tests-umbrella.h"; sourceTree = "<group>"; };
+		EE416F9CB6D83C3EE38B8352181C2A76 /* AzureClientRuntime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-prefix.pch"; sourceTree = "<group>"; };
+		EF2775E267F887BBA257DE96083D3CF9 /* CSFA_FaceLandmarks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FaceLandmarks.h; sourceTree = "<group>"; };
+		F1A4C09B03F2DDDB456A4DF0B82D9482 /* CSFA_FacialHair.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FacialHair.h; sourceTree = "<group>"; };
+		F34C5947322D37F3E02398E4EAD9812F /* CSFA_FaceRectangle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FaceRectangle.h; sourceTree = "<group>"; };
+		F806B79AAA4E93005A4A5A7F4D679D9E /* CSFA_Error.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Error.h; sourceTree = "<group>"; };
+		F91464DBA30C1A982DFF8D82E4C81D79 /* CSFA_LargePersonGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_LargePersonGroup.m; sourceTree = "<group>"; };
+		F997173D856746B8E1A637A6308E7186 /* CSFA_VerifyFaceToFaceRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_VerifyFaceToFaceRequest.m; sourceTree = "<group>"; };
+		FAC919B85D86D3D00993BF4E6C78BE1D /* CSFA_GroupResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_GroupResult.m; sourceTree = "<group>"; };
+		FB616ADFEBB62CE071983A5CEF9238C7 /* CSFA_ImageUrl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_ImageUrl.m; sourceTree = "<group>"; };
+		FC2DD503CF02296258B1FACF52E75845 /* CSFA_LargePersonGroupPersons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargePersonGroupPersons.h; sourceTree = "<group>"; };
+		FF2DBEE8EEF9C391F18874737412ABE7 /* CSFA_Accessory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Accessory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		45CBCC6C4BF5C13D65AFE381126A500F /* Frameworks */ = {
+		1BABECDE42A8FFEFBF8FC3AE3F76C0E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E7E0BC177D2A5BF5AF654A1468C8E5E /* Foundation.framework in Frameworks */,
+				1FE2478F272D125E1A634F810BE3C0D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E4D652E583D1244D5B15C75C13AB64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57AAB14936C5FA71C09F9CBA8F8D1F /* AzureClientRuntime.framework in Frameworks */,
+				B6E68AF6B1D4912F742A2AB43F3F1B5A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,11 +382,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A5C7780325B7EF907563BCD32FB27B1 /* Frameworks */ = {
+		B68F822D30173A7FFEBF60CF6F2D0C5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9D815B1009B4D96775EE4818C8F88D /* Foundation.framework in Frameworks */,
+				45D4BB0BA886170D3668EEE32E4EDF63 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,39 +411,207 @@
 			path = "Target Support Files/Pods-FaceAzure_Example";
 			sourceTree = "<group>";
 		};
-		44D8046D66BAFADECF6EE6AC4BB5FFBA /* Development Pods */ = {
+		0C17078E55227AED149B8EA086175E3F /* AzureClientRuntime */ = {
 			isa = PBXGroup;
 			children = (
-				8E03BD579196DB4B72DEF9164762B314 /* FaceAzure */,
+				974A14947F618C253CAB4BE258DC33D2 /* AZCodable.h */,
+				422F6A3EEEBB2366C064AE9657CCED39 /* AZCoder.h */,
+				557C5E4486BB019431BC4006D3F676FB /* AZDefaultErrorModel.h */,
+				BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */,
+				2C03FF4316556F94CC30CA669F2591A7 /* AZJsonCoder.h */,
+				CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */,
+				2C8F30502D6C67FA1DBA85306C40C4FC /* AZOperationError.h */,
+				AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */,
+				19C135D5FFB38ED9FA0B227628E81A48 /* AZRequestHelper.h */,
+				EC2AAEA0560299B028D8F4CADB35FE07 /* AZRequestHelper.m */,
+				4F415308B0C0B15856D1638E4B7B39EC /* AZRequestParameters.h */,
+				5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */,
+				8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */,
+				A79019659894C76FFCA4530894195FCA /* AzureDate.m */,
+				4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */,
+				62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */,
+				3BC749AE364DE16D1BAA7F22BB623265 /* Support Files */,
 			);
-			name = "Development Pods";
+			path = AzureClientRuntime;
 			sourceTree = "<group>";
 		};
-		4CC31C8C45AFD34958762E0AE7A32948 /* Products */ = {
+		178F87AD9CF76B37579AEF0320412386 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				59206D5324748D952003A501CAD0D2E1 /* FaceAzure.framework */,
-				2EA3BC09A87732C0121AAADE234EB9CA /* Pods_FaceAzure_Example.framework */,
-				4DE82E60C4ADFABDD957CC0F7DE420A2 /* Pods_FaceAzure_Tests.framework */,
+				C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		1E22AAA022C65A6E62DE9F7539ED2FA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0CBEC032A8F4E8507A6C70F4719F9896 /* AzureClientRuntime.framework */,
+				B16F945000F0FF825586EFFD7F32950D /* FaceAzure.framework */,
+				607B7027D2BF52FDC42F8BF7437FE265 /* Pods_FaceAzure_Example.framework */,
+				CDAEE3350DB2CAF8CF45D830711B3E3E /* Pods_FaceAzure_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+		2F18EC0F9D0C40B6222237331D99E71A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+				0C17078E55227AED149B8EA086175E3F /* AzureClientRuntime */,
 			);
-			name = iOS;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3BC749AE364DE16D1BAA7F22BB623265 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48B6C390914D3AEE4CEC47ABB46798AB /* AzureClientRuntime.modulemap */,
+				8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */,
+				B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */,
+				EE416F9CB6D83C3EE38B8352181C2A76 /* AzureClientRuntime-prefix.pch */,
+				0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */,
+				E1CBFAC896F8EE71C3FDB740513BF144 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AzureClientRuntime";
+			sourceTree = "<group>";
+		};
+		4F608644006FBEFFA175ED45B23DCC24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				349FE7E1683E280CBF5B43060BA13AA5 /* CSFA_Accessory.h */,
+				FF2DBEE8EEF9C391F18874737412ABE7 /* CSFA_Accessory.m */,
+				6B4862307F5E864F97254D62D5BFE2B0 /* CSFA_AccessoryType.h */,
+				9590AE99BEE581F8881D367D1F852915 /* CSFA_AccessoryType.m */,
+				ABE145E159A5BB1D39645EBD8013993D /* CSFA_APIError.h */,
+				9671490FD90CD17BB88031DF2BB26BF1 /* CSFA_APIError.m */,
+				6F742689C03BE201DFBBDDDB7D783EF5 /* CSFA_Blur.h */,
+				D5BAE1C709EB8340D42721A4C1722D0A /* CSFA_Blur.m */,
+				26538821245E7BDABCF4631278627DD0 /* CSFA_BlurLevel.h */,
+				223704E1034C2F1D65BFD6B32E2E08D8 /* CSFA_BlurLevel.m */,
+				25EFC6FCE844E56325079A48BC041242 /* CSFA_Coordinate.h */,
+				8A6654996D5EEC9E22AEE7C821C75763 /* CSFA_Coordinate.m */,
+				B741DF7D5E30F583B3034718C2713938 /* CSFA_DetectedFace.h */,
+				60D4083A6D08B1398DAC9720202AE41A /* CSFA_DetectedFace.m */,
+				62B97F1E61CDB69B972DDD76AFF78AB1 /* CSFA_Emotion.h */,
+				E5BA2F77D213D436EA755C1A0BF3F3D4 /* CSFA_Emotion.m */,
+				F806B79AAA4E93005A4A5A7F4D679D9E /* CSFA_Error.h */,
+				C2D4369FD6E09E940E743A9D7EA92393 /* CSFA_Error.m */,
+				6950432D545F41042F767DEF3D1D6B27 /* CSFA_Exposure.h */,
+				3171E33EF33F233B4EEC79572F5BFD8E /* CSFA_Exposure.m */,
+				A8EBDC82662A81170F1F0FBB0CE0376A /* CSFA_ExposureLevel.h */,
+				A67774F9D55B0DC4F5E9CB8D1E7C1593 /* CSFA_ExposureLevel.m */,
+				43BD2DF238A7CDC0B85D8BF15D3998BD /* CSFA_FaceAttributes.h */,
+				9E210FE3A91FAC8DC4258317D6928D38 /* CSFA_FaceAttributes.m */,
+				D736E416C5388496872D6FA762715B64 /* CSFA_FaceAttributeType.h */,
+				D69FB72825930DE6D1D470E8243AC340 /* CSFA_FaceAttributeType.m */,
+				EF2775E267F887BBA257DE96083D3CF9 /* CSFA_FaceLandmarks.h */,
+				B3EDA4F5F4C6D19475E5C87F65A86F4F /* CSFA_FaceLandmarks.m */,
+				36AF28698F079EC97A1F04FEA5DE4D16 /* CSFA_FaceList.h */,
+				86F0458794B3EC9E8D4D875AEB968FFF /* CSFA_FaceList.m */,
+				F34C5947322D37F3E02398E4EAD9812F /* CSFA_FaceRectangle.h */,
+				2AE0265A0CD8ED3C6C71312C73D470B5 /* CSFA_FaceRectangle.m */,
+				F1A4C09B03F2DDDB456A4DF0B82D9482 /* CSFA_FacialHair.h */,
+				BFD898AE446E3B8A00889B9DB59D15C7 /* CSFA_FacialHair.m */,
+				5DDE92D85459BB2F398FD0F4CD7970EB /* CSFA_FindSimilarMatchMode.h */,
+				942DFBE32E7288D12F133D9C66A9D635 /* CSFA_FindSimilarMatchMode.m */,
+				DD661C8492EF02926C1B358773312150 /* CSFA_FindSimilarRequest.h */,
+				E3D9AF5EAFB60C3E38B6FE37DDF5328F /* CSFA_FindSimilarRequest.m */,
+				AC6D13410C3144CBDF24177D177D943F /* CSFA_Gender.h */,
+				32CE2AC57CCC42AFCE11F530A931758C /* CSFA_Gender.m */,
+				AB3D8F84CBD05F2DC983851FDD70EAD8 /* CSFA_GlassesType.h */,
+				E32ABB7CB194057F3B81FC2180A4E763 /* CSFA_GlassesType.m */,
+				53DD726090EE1772308E60E43E1C426B /* CSFA_GroupRequest.h */,
+				1934489EEA1BACCB1BC00085963827A6 /* CSFA_GroupRequest.m */,
+				5AF3C7FB169B3B6401D4731C720B444E /* CSFA_GroupResult.h */,
+				FAC919B85D86D3D00993BF4E6C78BE1D /* CSFA_GroupResult.m */,
+				1A5C0959B6B15955514B855A2A3A8F47 /* CSFA_Hair.h */,
+				CED73968AD0242C95306310B9577F5A2 /* CSFA_Hair.m */,
+				CDD16F9C5EC6D93DA8E26698E4BACC0C /* CSFA_HairColor.h */,
+				148ADFC7AB69A396D6E13B03CF076A9C /* CSFA_HairColor.m */,
+				E0D6BE22261110ED4F3009E18D9ECA0F /* CSFA_HairColorType.h */,
+				5CE095F187D892EA53856BC59B789AA4 /* CSFA_HairColorType.m */,
+				5DD081F2306515A4CE172C2E9458DDD1 /* CSFA_HeadPose.h */,
+				54B63B4CA457DDF68A92D48783C11F7F /* CSFA_HeadPose.m */,
+				B7AB7385A534ABC51BE3B0957357FE47 /* CSFA_IdentifyCandidate.h */,
+				DCC1326BFD3E1A1565E5E2CF6773CDCD /* CSFA_IdentifyCandidate.m */,
+				912B06CEFC7F846463CA8AE5E4C79364 /* CSFA_IdentifyRequest.h */,
+				BCA16AE0093CCB325F8C7638C5201516 /* CSFA_IdentifyRequest.m */,
+				0AC67A82C30566D336F1551BE35513C1 /* CSFA_IdentifyResult.h */,
+				E653B0466A661CACF4D6E074F8F7A0E1 /* CSFA_IdentifyResult.m */,
+				D47193605F9075DAAFF756526D602014 /* CSFA_ImageUrl.h */,
+				FB616ADFEBB62CE071983A5CEF9238C7 /* CSFA_ImageUrl.m */,
+				B42BFE63248E55DA96A7DEF6AF5F508B /* CSFA_LargeFaceList.h */,
+				DF4BC044116E9140763DD5827CC98106 /* CSFA_LargeFaceList.m */,
+				13E5FA37E49CC4B859E4825A007762D3 /* CSFA_LargePersonGroup.h */,
+				F91464DBA30C1A982DFF8D82E4C81D79 /* CSFA_LargePersonGroup.m */,
+				E3ACEC1F25D08080E5014C353036EB98 /* CSFA_Makeup.h */,
+				110758D4A6CAB659ACDC368840BFF725 /* CSFA_Makeup.m */,
+				D58A519FDAFC63D5BDCBED837FF0FAD0 /* CSFA_NameAndUserDataContract.h */,
+				95743E2EC8C25BEE2EE1BF744EDE8389 /* CSFA_NameAndUserDataContract.m */,
+				3436E3BBA71F3280B855C04AEEF62DF1 /* CSFA_Noise.h */,
+				C7B9C6EC963F90471BEBD3F02C548EFE /* CSFA_Noise.m */,
+				13DBF413C05C9CC381F45BF3CCFD70C7 /* CSFA_NoiseLevel.h */,
+				8518DA00F691F8A0131F090CEEA5B076 /* CSFA_NoiseLevel.m */,
+				E67124E6C077B4B084819F7EE0C82ABD /* CSFA_Occlusion.h */,
+				60D257785E6196FED4AF5361EBC32796 /* CSFA_Occlusion.m */,
+				470D4F8F37D44CDB0BC20258C416F4F7 /* CSFA_PersistedFace.h */,
+				B94A1CA6ED178C32B26936084A26392C /* CSFA_PersistedFace.m */,
+				A71C8CE878C4CCCCF4823BD4BCC96641 /* CSFA_Person.h */,
+				A32C4F3CA98E3C6B1CF3E83C654ECACC /* CSFA_Person.m */,
+				29BCAC919FECFDAB03A601557C5B4464 /* CSFA_PersonGroup.h */,
+				0295D99A3714A3BFF5937120E30A595B /* CSFA_PersonGroup.m */,
+				C74E3681CF670FC931F0BA8453F31CAC /* CSFA_SimilarFace.h */,
+				4543398669D3ABE86E8749CA87840E6E /* CSFA_SimilarFace.m */,
+				4ACCC3219239389F5DC1A0EA407DB35C /* CSFA_TrainingStatus.h */,
+				55E4EDCF62B1B88A4B9396432F8678E0 /* CSFA_TrainingStatus.m */,
+				816D17DC2BB594B45A1CF7EB12D25362 /* CSFA_TrainingStatusType.h */,
+				4C28253C053CBB227D4EAF2DC6CAC174 /* CSFA_TrainingStatusType.m */,
+				640518B6ED72BBEC28E8DD26B762F849 /* CSFA_UpdateFaceRequest.h */,
+				878693DEBCF0333D9C41BAA6EFD71614 /* CSFA_UpdateFaceRequest.m */,
+				1EDE497EC5185785D0A122D0BBF69E28 /* CSFA_VerifyFaceToFaceRequest.h */,
+				F997173D856746B8E1A637A6308E7186 /* CSFA_VerifyFaceToFaceRequest.m */,
+				8846D80CF515C9562A9358FAE74C4DD5 /* CSFA_VerifyFaceToPersonRequest.h */,
+				B6B892E700057396FBFFA60FD5FD43DD /* CSFA_VerifyFaceToPersonRequest.m */,
+				CE0AD858C26791BBD564B85C6099EB63 /* CSFA_VerifyResult.h */,
+				6F1B023FC725F6AA9F8FF989798A8559 /* CSFA_VerifyResult.m */,
+			);
+			name = Models;
+			path = FaceAzure/Classes/Models;
+			sourceTree = "<group>";
+		};
+		4F62B8CACC50689375E99C78E7EB77B2 /* FaceAzure */ = {
+			isa = PBXGroup;
+			children = (
+				A44642BC634FF4BC8F59FF96BA8F02B6 /* CSFA_FaceClientService.h */,
+				AB934BA16ECE8633024D556A8B76F0F0 /* CSFA_FaceClientService.m */,
+				05CCC91E3E0661A02D4844894F01070A /* ReplaceMe.m */,
+				4F608644006FBEFFA175ED45B23DCC24 /* Models */,
+				B5F8370A5DCE83EE8DED99E9E5FC2D35 /* Operations */,
+				9F15521D267FA415E6AB91F3303A752E /* Pod */,
+				A00A39A2C5314706E16CC32ABF04CB74 /* Support Files */,
+			);
+			name = FaceAzure;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7948D077C9016AC0EB96C5E298AF310F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99C09CE897F271F6E9F055B9EE1AFD80 /* AzureClientRuntime.framework */,
+				178F87AD9CF76B37579AEF0320412386 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				44D8046D66BAFADECF6EE6AC4BB5FFBA /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				4CC31C8C45AFD34958762E0AE7A32948 /* Products */,
+				B44085E427458EA6FBDE528CF86CDF35 /* Development Pods */,
+				7948D077C9016AC0EB96C5E298AF310F /* Frameworks */,
+				2F18EC0F9D0C40B6222237331D99E71A /* Pods */,
+				1E22AAA022C65A6E62DE9F7539ED2FA7 /* Products */,
 				7E2D2ED1A23F3FF09E4D980083A83180 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -166,47 +625,58 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8C4EEDF95D05F76186848E4D5A4D4A9F /* Support Files */ = {
+		9F15521D267FA415E6AB91F3303A752E /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				BE361351002282C1C643514421E05578 /* FaceAzure.modulemap */,
-				CDF4F652FA8D3CC15522E9B591E3242A /* FaceAzure.xcconfig */,
-				E184546049CC562200182F7CACAF2865 /* FaceAzure-dummy.m */,
-				BDCC77068FBB22B2A6BA1D57A3742C59 /* FaceAzure-prefix.pch */,
-				9C9B0E51E448BFB7E54A7E7ED8F77B70 /* FaceAzure-umbrella.h */,
-				BC4FFC640CABB77B35B378661FCFA680 /* Info.plist */,
+				A6A7CF8F8ADB074BF1078E9872DEDDD9 /* FaceAzure.podspec */,
+				47E82C87446C5CE9FEFE35CFB433737E /* LICENSE */,
+				B8CEC2DD99FB7A8EFBB5146BE4F11E9C /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A00A39A2C5314706E16CC32ABF04CB74 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EFE16BC314ED01DFE42B764E50EC251 /* FaceAzure.modulemap */,
+				35DC89C5D876783244F624783D72BE66 /* FaceAzure.xcconfig */,
+				6AE9DB0B523C08C8C992A3A5C17E08D6 /* FaceAzure-dummy.m */,
+				DBAC4C201E274090917B9363B3F97AAF /* FaceAzure-prefix.pch */,
+				C399CDFE7A5671FE487DA6B40EEBA5A2 /* FaceAzure-umbrella.h */,
+				C695CAE25DB695FAE83FE0C68DFE11B4 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/FaceAzure";
 			sourceTree = "<group>";
 		};
-		8E03BD579196DB4B72DEF9164762B314 /* FaceAzure */ = {
+		B44085E427458EA6FBDE528CF86CDF35 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3999471C6E7E9ACDA05ED312E1D3C46 /* ReplaceMe.m */,
-				E5CB01131B922E53608815E95EE5B60E /* Pod */,
-				8C4EEDF95D05F76186848E4D5A4D4A9F /* Support Files */,
+				4F62B8CACC50689375E99C78E7EB77B2 /* FaceAzure */,
 			);
-			name = FaceAzure;
-			path = ../..;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		B5F8370A5DCE83EE8DED99E9E5FC2D35 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+				2ECAB608E20802905D819DA59594C4DF /* CSFA_FaceLists.h */,
+				A6DC46954104A912F102CF1E3C11AEC0 /* CSFA_FaceLists.m */,
+				DAFC9D29A801CA5033656AC4CCA3C14E /* CSFA_Faces.h */,
+				D4434426486AEBDABC4CC64A81632534 /* CSFA_Faces.m */,
+				AEF919481780199F450537B1E448BDA5 /* CSFA_LargeFaceLists.h */,
+				19C76F714DEA816E9B473B83463D2C69 /* CSFA_LargeFaceLists.m */,
+				FC2DD503CF02296258B1FACF52E75845 /* CSFA_LargePersonGroupPersons.h */,
+				4AA973EA644EA05C8EB84E7952A359F6 /* CSFA_LargePersonGroupPersons.m */,
+				92E2445D0CBF70454CE70A53C8DD09E8 /* CSFA_LargePersonGroups.h */,
+				1BF3700AF5DAAE193E0AC0240BDF6C15 /* CSFA_LargePersonGroups.m */,
+				3388FFB83805F72CC51407204EB34F10 /* CSFA_PersonGroupPersons.h */,
+				6EF2DFF88436E2DABA6E744D9859EF8C /* CSFA_PersonGroupPersons.m */,
+				A2B42B12640285D04AC2C8CC07B91D99 /* CSFA_PersonGroups.h */,
+				A4CBB1F76CAB669F8FFB7945926524CF /* CSFA_PersonGroups.m */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E5CB01131B922E53608815E95EE5B60E /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				E8293FF5D1E575A4F1B36CD054E4D5A2 /* FaceAzure.podspec */,
-				33FE2368959001C6A7B304B67E6532B6 /* LICENSE */,
-				DEEF7A31CBD5CAD3A4AE83CEE6CAF108 /* README.md */,
-			);
-			name = Pod;
+			name = Operations;
+			path = FaceAzure/Classes/Operations;
 			sourceTree = "<group>";
 		};
 		FD092435E152595132F4D8D4B4314662 /* Pods-FaceAzure_Tests */ = {
@@ -230,6 +700,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		27DC703EB947F68BCCCC95D6F0002482 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				836A6D628F285D83419971B7B077716B /* Pods-FaceAzure_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32A9EE63E07556E9888BE7063D37A19E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,60 +716,145 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1D040F58BED87662ADC796155A3BBF2 /* Headers */ = {
+		3D8C157AA9023D69CFFCCA1DBD7FC662 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709E01A73CAAF609D2F79869F9AE97B7 /* Pods-FaceAzure_Example-umbrella.h in Headers */,
+				A0CC70CA0A9C576EA5A8DF00C475017D /* AZCodable.h in Headers */,
+				36E2E3D261B1B79A698BDFAF1CDE0962 /* AZCoder.h in Headers */,
+				76215408AA629372DA3B80581393D559 /* AZDefaultErrorModel.h in Headers */,
+				61B272BD791C732819EF5A21ED8BC5A9 /* AZJsonCoder.h in Headers */,
+				FAD76B3F982D5A85B9C4B3CBBA9AE4FE /* AZOperationError.h in Headers */,
+				6580A53E2728D096C39E4E7B11ECAF02 /* AZRequestHelper.h in Headers */,
+				5A3CDAA672B2034D45BB203D4862C85C /* AZRequestParameters.h in Headers */,
+				0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime.h in Headers */,
+				0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */,
+				C0CA4D06410919FD54DAB36A1C97E5AD /* AzureTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF2B59DDCE460D59F858FD4509A5396A /* Headers */ = {
+		82758284116893433B874C5BF929D3AB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A67B208573ED39E154C80D3BE6ADBDED /* FaceAzure-umbrella.h in Headers */,
+				B472417767D39E4F44DBAD38EA9EEBDF /* CSFA_Accessory.h in Headers */,
+				ECC4C8C1295DEDC7D665E4DC5F1B166A /* CSFA_AccessoryType.h in Headers */,
+				312E212B94714F9394BF531506F51DCE /* CSFA_APIError.h in Headers */,
+				C091C4FA861219338F46CE1BB6D6DC7E /* CSFA_Blur.h in Headers */,
+				74E6560200CD3397478DE993619B018D /* CSFA_BlurLevel.h in Headers */,
+				F3C574D04DB1F291BFB79E6454C270BF /* CSFA_Coordinate.h in Headers */,
+				0C38846F549CC028D6D786CC9B257EF6 /* CSFA_DetectedFace.h in Headers */,
+				434CF26034276896B7197633A78F3EB2 /* CSFA_Emotion.h in Headers */,
+				BDDE370DD28DE05BDF9EABFEC347B32A /* CSFA_Error.h in Headers */,
+				C0C266B76D10A90A012D4CBDDE5A5DA2 /* CSFA_Exposure.h in Headers */,
+				FA398958B4E3C7E62861EB501256A2F7 /* CSFA_ExposureLevel.h in Headers */,
+				0A7CC2DFF4AEE8457A29854075FB612E /* CSFA_FaceAttributes.h in Headers */,
+				965A6D5876CE1E04F9D162F63A3F08F2 /* CSFA_FaceAttributeType.h in Headers */,
+				5B8CE3D3F6765DBD69947C588BDD7ACD /* CSFA_FaceClientService.h in Headers */,
+				D62EDEC8D2D3E7CA76C7A3B56B07A073 /* CSFA_FaceLandmarks.h in Headers */,
+				E2E02506324D8AEE5C9095C84DDAFFDD /* CSFA_FaceList.h in Headers */,
+				F76F35A08AB8F68F5AE3637CB9EA3ABB /* CSFA_FaceLists.h in Headers */,
+				098B776071DFCE48F135EA8DC608EBB6 /* CSFA_FaceRectangle.h in Headers */,
+				D18817221C253D37B2A6E882A4DD6A22 /* CSFA_Faces.h in Headers */,
+				C3F45A133D0FE5A272C6FCAB3D32C5D8 /* CSFA_FacialHair.h in Headers */,
+				118D6F5E2387E95993EF032FCECE8870 /* CSFA_FindSimilarMatchMode.h in Headers */,
+				AAB315978BBD58051D2A3A926ABDC78D /* CSFA_FindSimilarRequest.h in Headers */,
+				599DF71B826C3DCE7220FACD60A896E4 /* CSFA_Gender.h in Headers */,
+				2693D1B7D89E774ECD07D11A39784E81 /* CSFA_GlassesType.h in Headers */,
+				DDDD3BB650A3EDCA892C119705CE3A4A /* CSFA_GroupRequest.h in Headers */,
+				93C9F97D5FCF33550A5B1423A32303C2 /* CSFA_GroupResult.h in Headers */,
+				CA6BC1810E9B3BBD18A714B415C9D2C3 /* CSFA_Hair.h in Headers */,
+				EAD4017712F93816B6CECFE9A00DAE1D /* CSFA_HairColor.h in Headers */,
+				3146B5FF15149F514867D2005C9C4D90 /* CSFA_HairColorType.h in Headers */,
+				F51C40288F87A4F5224815CAC5FF02CC /* CSFA_HeadPose.h in Headers */,
+				3C6906A12F453CE2572030BB87B2EBC6 /* CSFA_IdentifyCandidate.h in Headers */,
+				30E299B2D92F9EE8D222C5A014E229F0 /* CSFA_IdentifyRequest.h in Headers */,
+				3A0BC3E45AC9B337BB5173EDD0007BD5 /* CSFA_IdentifyResult.h in Headers */,
+				62B02286EC52B7773CA61364F5994A6C /* CSFA_ImageUrl.h in Headers */,
+				442FE36074DFFEA2F0F23B376077DF4D /* CSFA_LargeFaceList.h in Headers */,
+				73CEB577E296945F3518317F7A92A0F2 /* CSFA_LargeFaceLists.h in Headers */,
+				C8BC731D9D408234D7606D51E6F9CDFF /* CSFA_LargePersonGroup.h in Headers */,
+				281E161282844E207D5C78F6120AEAF8 /* CSFA_LargePersonGroupPersons.h in Headers */,
+				BDC5AF0A0E4EA2DF861BE957886FB57B /* CSFA_LargePersonGroups.h in Headers */,
+				56A2DFAE584CB58320E8E3665A9E94AF /* CSFA_Makeup.h in Headers */,
+				7EDA826B606D4914CD512D7606E2227E /* CSFA_NameAndUserDataContract.h in Headers */,
+				42CD412D40A6899B30464151F785AC0E /* CSFA_Noise.h in Headers */,
+				756ACFC47F118C6BD6C36ACC51BF831D /* CSFA_NoiseLevel.h in Headers */,
+				58243418988888071DDE701B5BFF0622 /* CSFA_Occlusion.h in Headers */,
+				49506B9E0E2C4D8FCEDD66E325816D90 /* CSFA_PersistedFace.h in Headers */,
+				82305C9B8B8DE09794D6022D0B7DB45E /* CSFA_Person.h in Headers */,
+				DD7D83BC51E6D54F0D0FD43FC58F1DB5 /* CSFA_PersonGroup.h in Headers */,
+				2B5E18A84649A9474D8857B45DB8BF69 /* CSFA_PersonGroupPersons.h in Headers */,
+				E6B9F01CBCE10B62F8F296BC011D11E4 /* CSFA_PersonGroups.h in Headers */,
+				2C87E8EDBA33BAED90ECCD5F30DFC1E2 /* CSFA_SimilarFace.h in Headers */,
+				4C02C5C75C39EAA495890F2E540B40E4 /* CSFA_TrainingStatus.h in Headers */,
+				12C5E8201F03E3010545EAD0F00FA169 /* CSFA_TrainingStatusType.h in Headers */,
+				1BE1568D45E456CB69B45652E550D834 /* CSFA_UpdateFaceRequest.h in Headers */,
+				36B581BC1D2F7C6C611E324CCD5205B0 /* CSFA_VerifyFaceToFaceRequest.h in Headers */,
+				23D6A972E4127A8CADBA245842E99A5E /* CSFA_VerifyFaceToPersonRequest.h in Headers */,
+				CE473EB3F1939D26BD523A5C822781FA /* CSFA_VerifyResult.h in Headers */,
+				ACD32FEE63B54644CF68C102C9987C43 /* FaceAzure-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		03C9772D722DE7080B984E8E027EF4B4 /* FaceAzure */ = {
+		5144293FEADED3E02A070EE9163F6B8E /* AzureClientRuntime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83E31D1559A3E1A738B3A6DF6ADB0131 /* Build configuration list for PBXNativeTarget "FaceAzure" */;
+			buildConfigurationList = B95E178C56886924D2585CF438FE8EE8 /* Build configuration list for PBXNativeTarget "AzureClientRuntime" */;
 			buildPhases = (
-				EF2B59DDCE460D59F858FD4509A5396A /* Headers */,
-				171A0862DBA920B44B6B644B438B1B3F /* Sources */,
-				9A5C7780325B7EF907563BCD32FB27B1 /* Frameworks */,
-				5A4B9496BE5D8229C4F104A7E789BC95 /* Resources */,
+				3D8C157AA9023D69CFFCCA1DBD7FC662 /* Headers */,
+				78836BFEA33E16B8782BE5B0302DC8BC /* Sources */,
+				1BABECDE42A8FFEFBF8FC3AE3F76C0E7 /* Frameworks */,
+				08BAAC5CB94899C6BBC389BA03C73BFF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FaceAzure;
-			productName = FaceAzure;
-			productReference = 59206D5324748D952003A501CAD0D2E1 /* FaceAzure.framework */;
+			name = AzureClientRuntime;
+			productName = AzureClientRuntime;
+			productReference = 0CBEC032A8F4E8507A6C70F4719F9896 /* AzureClientRuntime.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F2A5AC2FC5ED37384E42DA715DF40CE1 /* Pods-FaceAzure_Example */ = {
+		7AAF09017FF5A61633950C783B686F8C /* Pods-FaceAzure_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 311F98DE850DD0E9E5B4389C580EC6ED /* Build configuration list for PBXNativeTarget "Pods-FaceAzure_Example" */;
+			buildConfigurationList = 79A734EDDF956100C67FCA04C6577125 /* Build configuration list for PBXNativeTarget "Pods-FaceAzure_Example" */;
 			buildPhases = (
-				B1D040F58BED87662ADC796155A3BBF2 /* Headers */,
-				9C8319B8ABDBEE0180F7CA30D1522BC7 /* Sources */,
-				45CBCC6C4BF5C13D65AFE381126A500F /* Frameworks */,
-				3B96C176F8B222CBE5935A2476062677 /* Resources */,
+				27DC703EB947F68BCCCC95D6F0002482 /* Headers */,
+				830F2DC2B0483E8E7864DE41B8346E07 /* Sources */,
+				B68F822D30173A7FFEBF60CF6F2D0C5C /* Frameworks */,
+				B7A141B60AE02452EDEF473150A5BDD8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AC70687E0285174BE4007F49B9478957 /* PBXTargetDependency */,
+				34C8BD903D86A1805E4A7C1CCB7D9CF0 /* PBXTargetDependency */,
+				7718A3D9BDC60901B802A78877B73F78 /* PBXTargetDependency */,
 			);
 			name = "Pods-FaceAzure_Example";
 			productName = "Pods-FaceAzure_Example";
-			productReference = 2EA3BC09A87732C0121AAADE234EB9CA /* Pods_FaceAzure_Example.framework */;
+			productReference = 607B7027D2BF52FDC42F8BF7437FE265 /* Pods_FaceAzure_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AC0A03AA3DC5ECF2C48C97CA6E55BA8A /* FaceAzure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9626C833AA11A364FE119D5E21A54363 /* Build configuration list for PBXNativeTarget "FaceAzure" */;
+			buildPhases = (
+				82758284116893433B874C5BF929D3AB /* Headers */,
+				A2F1884F53D67F87B0A05F8FC152FAA9 /* Sources */,
+				73E4D652E583D1244D5B15C75C13AB64 /* Frameworks */,
+				E8751DDE3662DAA5E2BF02A2068AD0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9952FF695FB78C24429693683F4AB7A0 /* PBXTargetDependency */,
+			);
+			name = FaceAzure;
+			productName = FaceAzure;
+			productReference = B16F945000F0FF825586EFFD7F32950D /* FaceAzure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F6D07A9DC77B5636889D244D52CD0F14 /* Pods-FaceAzure_Tests */ = {
@@ -310,7 +873,7 @@
 			);
 			name = "Pods-FaceAzure_Tests";
 			productName = "Pods-FaceAzure_Tests";
-			productReference = 4DE82E60C4ADFABDD957CC0F7DE420A2 /* Pods_FaceAzure_Tests.framework */;
+			productReference = CDAEE3350DB2CAF8CF45D830711B3E3E /* Pods_FaceAzure_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -330,26 +893,20 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4CC31C8C45AFD34958762E0AE7A32948 /* Products */;
+			productRefGroup = 1E22AAA022C65A6E62DE9F7539ED2FA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03C9772D722DE7080B984E8E027EF4B4 /* FaceAzure */,
-				F2A5AC2FC5ED37384E42DA715DF40CE1 /* Pods-FaceAzure_Example */,
+				5144293FEADED3E02A070EE9163F6B8E /* AzureClientRuntime */,
+				AC0A03AA3DC5ECF2C48C97CA6E55BA8A /* FaceAzure */,
+				7AAF09017FF5A61633950C783B686F8C /* Pods-FaceAzure_Example */,
 				F6D07A9DC77B5636889D244D52CD0F14 /* Pods-FaceAzure_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3B96C176F8B222CBE5935A2476062677 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A4B9496BE5D8229C4F104A7E789BC95 /* Resources */ = {
+		08BAAC5CB94899C6BBC389BA03C73BFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,18 +920,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		171A0862DBA920B44B6B644B438B1B3F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		B7A141B60AE02452EDEF473150A5BDD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8865599798196B3B4318448BDB73AE2 /* FaceAzure-dummy.m in Sources */,
-				678D5A2BD477B206834D7993EB6616B0 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E8751DDE3662DAA5E2BF02A2068AD0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		303F6EFF2AA4EAC3935CC8A27E1B484E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,37 +945,130 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C8319B8ABDBEE0180F7CA30D1522BC7 /* Sources */ = {
+		78836BFEA33E16B8782BE5B0302DC8BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76E47F812FCECC7B424AA0A3237ED8CC /* Pods-FaceAzure_Example-dummy.m in Sources */,
+				16C84F43CDFBA2044A221538434CE551 /* AZDefaultErrorModel.m in Sources */,
+				6C7DC75535AEDEDEE8D13F255FCEBBCA /* AZJsonCoder.m in Sources */,
+				1D93B591433EDEC552486DA9B1E17E0E /* AZOperationError.m in Sources */,
+				5E1D15A66D89817D4FFBF80590A963A0 /* AZRequestHelper.m in Sources */,
+				123F2107E1B9652596A19D173C9C19A7 /* AZRequestParameters.m in Sources */,
+				1F85DCE88D75B679F1CD36DBB27FA9BE /* AzureClientRuntime-dummy.m in Sources */,
+				7065148843749B5D7D08C3FE8A377DD0 /* AzureDate.m in Sources */,
+				537F5FE0505C87159FEBF1F889C0EA9D /* AzureTypes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830F2DC2B0483E8E7864DE41B8346E07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C25D0F5E356D2B39539E5A07BFC20DB /* Pods-FaceAzure_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2F1884F53D67F87B0A05F8FC152FAA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BC3D7694C9733E63092CFC5F509837 /* CSFA_Accessory.m in Sources */,
+				324580E350637836DE932E42FFD3104E /* CSFA_AccessoryType.m in Sources */,
+				45F717143D0EE16EDEFBDABB90CCD955 /* CSFA_APIError.m in Sources */,
+				CF66FA0C88B7CC323D11DCF5B315FABC /* CSFA_Blur.m in Sources */,
+				4BBB8810B1B7377E95C48F57E75F8BFB /* CSFA_BlurLevel.m in Sources */,
+				FC63BE348B5EE4436A8C72C69FC704E8 /* CSFA_Coordinate.m in Sources */,
+				5859ED7224BD467380BDBCAAB1BD431A /* CSFA_DetectedFace.m in Sources */,
+				FEAF352F474F5B127C7DF59314908379 /* CSFA_Emotion.m in Sources */,
+				713DCD129E8FDD0A87776DE25565C4C5 /* CSFA_Error.m in Sources */,
+				2B6C3337CEDDD9AA2D7EBB6C4266D1A3 /* CSFA_Exposure.m in Sources */,
+				81DD7F38C3E0AE4403B16B77DA23CABA /* CSFA_ExposureLevel.m in Sources */,
+				436D9FC6D21C86C37DF81F56E77D9A32 /* CSFA_FaceAttributes.m in Sources */,
+				B767AB1BAFA793464591824731F177EC /* CSFA_FaceAttributeType.m in Sources */,
+				9A195BDC105BC2CA1BC18199E48789A4 /* CSFA_FaceClientService.m in Sources */,
+				6402A3B28BE291774DD3DF4895CD9CED /* CSFA_FaceLandmarks.m in Sources */,
+				A180906C4CF09CBB882DFE6CDF54FBBC /* CSFA_FaceList.m in Sources */,
+				4964B409FB2E74FFB95375F3B2F25BB9 /* CSFA_FaceLists.m in Sources */,
+				E3FE226539CD9436AC9C77A478C40283 /* CSFA_FaceRectangle.m in Sources */,
+				3E78C382219A0D3BFAE11FFBE65F7667 /* CSFA_Faces.m in Sources */,
+				F11E39A2841D2690C9C7E8FD4DF4CBA6 /* CSFA_FacialHair.m in Sources */,
+				2DA8C990CED961B91EDD2A698C9E3976 /* CSFA_FindSimilarMatchMode.m in Sources */,
+				60569BA3E86C5AE7FB22CF0C35EDA356 /* CSFA_FindSimilarRequest.m in Sources */,
+				81BE152DEA518EE3861B50C7CC6C0CC2 /* CSFA_Gender.m in Sources */,
+				160D5210E872F9750A6528552ABEC820 /* CSFA_GlassesType.m in Sources */,
+				894166FAFFA1C269F1E48E26C71385E0 /* CSFA_GroupRequest.m in Sources */,
+				46F26FF29C5FA25EC7BBAE2303D5F185 /* CSFA_GroupResult.m in Sources */,
+				28E2E6B68F0F53AA540BDEDA6B841F69 /* CSFA_Hair.m in Sources */,
+				4AE94AF7186C9F00879B2C9D68041126 /* CSFA_HairColor.m in Sources */,
+				BF13C7EE8CBDDA01909DD53B2E65E717 /* CSFA_HairColorType.m in Sources */,
+				FF6DFD7BA4D65DABCD1F257B33C41E75 /* CSFA_HeadPose.m in Sources */,
+				72912A93A1F093128769F60A90EA2D9F /* CSFA_IdentifyCandidate.m in Sources */,
+				E4C7BD7E5323660296A4D3F76CBACCF1 /* CSFA_IdentifyRequest.m in Sources */,
+				C51520896CC08B93E46F80C3DBD98DE2 /* CSFA_IdentifyResult.m in Sources */,
+				1C98098E191742E5AEA90CF508433FB5 /* CSFA_ImageUrl.m in Sources */,
+				1B2EAF642DDA0EE96B113DD811BB6F8A /* CSFA_LargeFaceList.m in Sources */,
+				ABC54DFCCC9AEBFE30BE73EA2C6B9830 /* CSFA_LargeFaceLists.m in Sources */,
+				D523AD7A6AB91554697517EDBC0456C1 /* CSFA_LargePersonGroup.m in Sources */,
+				E5940EEA44DE6B34F1CE2CC9F7F00E5D /* CSFA_LargePersonGroupPersons.m in Sources */,
+				D262D11ABB70F549F774F246AD08E38B /* CSFA_LargePersonGroups.m in Sources */,
+				D6BAF8C0007A6123C25F8C7C964B7D9C /* CSFA_Makeup.m in Sources */,
+				E985C90C933B17C11DE467028888886D /* CSFA_NameAndUserDataContract.m in Sources */,
+				E2E29C66EFFFAF573B10D8DACBBD0F19 /* CSFA_Noise.m in Sources */,
+				D67320A90DCF0D7E114FFF12884774D6 /* CSFA_NoiseLevel.m in Sources */,
+				B18EBC626B12EA580FE0F9956E50324F /* CSFA_Occlusion.m in Sources */,
+				B08D793B950CEB9C5320B42BAFFB0969 /* CSFA_PersistedFace.m in Sources */,
+				F10EF0C216732075A881A2FE0E010E66 /* CSFA_Person.m in Sources */,
+				35DF8421622924B377E84CAA3C77B798 /* CSFA_PersonGroup.m in Sources */,
+				24C4268BD2F65A97E76C946F7F779CFA /* CSFA_PersonGroupPersons.m in Sources */,
+				8F0F7E9D014F0F87D0783F9CF6444576 /* CSFA_PersonGroups.m in Sources */,
+				22E057CFD697BDCF862796831004D572 /* CSFA_SimilarFace.m in Sources */,
+				889F34DA5B36E9D11393B27FAE35F74E /* CSFA_TrainingStatus.m in Sources */,
+				437F0D0D406063ACC3473F0C4986760C /* CSFA_TrainingStatusType.m in Sources */,
+				205BDDF93F7B2277EC7454E4451BF869 /* CSFA_UpdateFaceRequest.m in Sources */,
+				BB0A8F50C40AA6B79039B3F6142C11F5 /* CSFA_VerifyFaceToFaceRequest.m in Sources */,
+				64055397BAE50F8072EFADC043712A65 /* CSFA_VerifyFaceToPersonRequest.m in Sources */,
+				E68CDB43E40CF1484C61540974423455 /* CSFA_VerifyResult.m in Sources */,
+				7FB5DE1228AB04F5E59B416B90D14A30 /* FaceAzure-dummy.m in Sources */,
+				078DCBA7F3CD166FA1EF4B09E5C92A21 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AC70687E0285174BE4007F49B9478957 /* PBXTargetDependency */ = {
+		34C8BD903D86A1805E4A7C1CCB7D9CF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AzureClientRuntime;
+			target = 5144293FEADED3E02A070EE9163F6B8E /* AzureClientRuntime */;
+			targetProxy = 8F138C3ECCC95DC02EF00292884D0381 /* PBXContainerItemProxy */;
+		};
+		7718A3D9BDC60901B802A78877B73F78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FaceAzure;
-			target = 03C9772D722DE7080B984E8E027EF4B4 /* FaceAzure */;
-			targetProxy = 675F741AF80999A10955EDC4F3A54ACA /* PBXContainerItemProxy */;
+			target = AC0A03AA3DC5ECF2C48C97CA6E55BA8A /* FaceAzure */;
+			targetProxy = 5724016DF2266D23B20B824F549DE723 /* PBXContainerItemProxy */;
+		};
+		9952FF695FB78C24429693683F4AB7A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AzureClientRuntime;
+			target = 5144293FEADED3E02A070EE9163F6B8E /* AzureClientRuntime */;
+			targetProxy = 99D1B763D87E6D85AA5B3B487C093E05 /* PBXContainerItemProxy */;
 		};
 		D13F8567136B0C2E3FBE153D481A8E8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-FaceAzure_Example";
-			target = F2A5AC2FC5ED37384E42DA715DF40CE1 /* Pods-FaceAzure_Example */;
+			target = 7AAF09017FF5A61633950C783B686F8C /* Pods-FaceAzure_Example */;
 			targetProxy = 1137D677E7C2621EADB4EFBB5F3BEE4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3E1E37A20D4C70359F4B6E4FA38E3468 /* Release */ = {
+		2B5118FDC703FCF45BC045CF037131EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C21BF828C3C9D96FA435BE63AAD6337 /* Pods-FaceAzure_Tests.release.xcconfig */;
+			baseConfigurationReference = D066570364E6FFE4EA7706F967990A07 /* Pods-FaceAzure_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -423,12 +1078,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Tests/Pods-FaceAzure_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Example/Pods-FaceAzure_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -443,11 +1098,10 @@
 			};
 			name = Release;
 		};
-		427BEBE9EE3C8083FA43AA4443E87600 /* Debug */ = {
+		2BE5E9C753EBD18AA6E775DFB8895A25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 849338DC03900695D72EC7DB7247B655 /* Pods-FaceAzure_Example.debug.xcconfig */;
+			baseConfigurationReference = 35DC89C5D876783244F624783D72BE66 /* FaceAzure.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -457,87 +1111,27 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FaceAzure/FaceAzure-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FaceAzure/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Example/Pods-FaceAzure_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/FaceAzure/FaceAzure.modulemap";
+				PRODUCT_MODULE_NAME = FaceAzure;
+				PRODUCT_NAME = FaceAzure;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		56A05ADD3BABDA1B56D1F979845809B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
 			name = Release;
 		};
-		8410B70C631909EA81743E30DDA52B6E /* Debug */ = {
+		4548652AD0FD1901A5FED99E70F2C77C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDF4F652FA8D3CC15522E9B591E3242A /* FaceAzure.xcconfig */;
+			baseConfigurationReference = 35DC89C5D876783244F624783D72BE66 /* FaceAzure.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -565,74 +1159,7 @@
 			};
 			name = Debug;
 		};
-		9B9B970ED976FDD2C24B45AD219DDB1D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D066570364E6FFE4EA7706F967990A07 /* Pods-FaceAzure_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Example/Pods-FaceAzure_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BBC092B75E105C8498F3BC065CD13076 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42D2CC0920A463511770A15B91670995 /* Pods-FaceAzure_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Tests/Pods-FaceAzure_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BEFDB93BF207328A04F1220475D02C3B /* Debug */ = {
+		8C3D32AC054F4DBEE82EB2FD6A303D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -685,7 +1212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -696,10 +1223,12 @@
 			};
 			name = Debug;
 		};
-		E34B38E8C4628D8886A863D1EADDD6FF /* Release */ = {
+		9B96B5D19C4714FBCB159CC518D7B1E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDF4F652FA8D3CC15522E9B591E3242A /* FaceAzure.xcconfig */;
+			baseConfigurationReference = 42D2CC0920A463511770A15B91670995 /* Pods-FaceAzure_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -709,14 +1238,206 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FaceAzure/FaceAzure-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FaceAzure/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FaceAzure/FaceAzure.modulemap";
-				PRODUCT_MODULE_NAME = FaceAzure;
-				PRODUCT_NAME = FaceAzure;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Tests/Pods-FaceAzure_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4DF13FADF6B08BA680F1983E5B28DB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C21BF828C3C9D96FA435BE63AAD6337 /* Pods-FaceAzure_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Tests/Pods-FaceAzure_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B751CA5B597BFC35A6C0287C65F9E2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BE7292FFB593C1A095DA4EAEA7DE2CD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AzureClientRuntime/AzureClientRuntime-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AzureClientRuntime/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AzureClientRuntime/AzureClientRuntime.modulemap";
+				PRODUCT_MODULE_NAME = AzureClientRuntime;
+				PRODUCT_NAME = AzureClientRuntime;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE1B9E9871131BBD50598BEC8FF40F6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 849338DC03900695D72EC7DB7247B655 /* Pods-FaceAzure_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FaceAzure_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FaceAzure_Example/Pods-FaceAzure_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF52AE768C7544A70F43176089E8276C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AzureClientRuntime/AzureClientRuntime-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AzureClientRuntime/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AzureClientRuntime/AzureClientRuntime.modulemap";
+				PRODUCT_MODULE_NAME = AzureClientRuntime;
+				PRODUCT_NAME = AzureClientRuntime;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -733,8 +1454,8 @@
 		1AC71091A1A00EAAC5FCD0C45B519C5C /* Build configuration list for PBXNativeTarget "Pods-FaceAzure_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBC092B75E105C8498F3BC065CD13076 /* Debug */,
-				3E1E37A20D4C70359F4B6E4FA38E3468 /* Release */,
+				9B96B5D19C4714FBCB159CC518D7B1E0 /* Debug */,
+				A4DF13FADF6B08BA680F1983E5B28DB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -742,26 +1463,35 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BEFDB93BF207328A04F1220475D02C3B /* Debug */,
-				56A05ADD3BABDA1B56D1F979845809B1 /* Release */,
+				8C3D32AC054F4DBEE82EB2FD6A303D73 /* Debug */,
+				B751CA5B597BFC35A6C0287C65F9E2E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		311F98DE850DD0E9E5B4389C580EC6ED /* Build configuration list for PBXNativeTarget "Pods-FaceAzure_Example" */ = {
+		79A734EDDF956100C67FCA04C6577125 /* Build configuration list for PBXNativeTarget "Pods-FaceAzure_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				427BEBE9EE3C8083FA43AA4443E87600 /* Debug */,
-				9B9B970ED976FDD2C24B45AD219DDB1D /* Release */,
+				CE1B9E9871131BBD50598BEC8FF40F6C /* Debug */,
+				2B5118FDC703FCF45BC045CF037131EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83E31D1559A3E1A738B3A6DF6ADB0131 /* Build configuration list for PBXNativeTarget "FaceAzure" */ = {
+		9626C833AA11A364FE119D5E21A54363 /* Build configuration list for PBXNativeTarget "FaceAzure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8410B70C631909EA81743E30DDA52B6E /* Debug */,
-				E34B38E8C4628D8886A863D1EADDD6FF /* Release */,
+				4548652AD0FD1901A5FED99E70F2C77C /* Debug */,
+				2BE5E9C753EBD18AA6E775DFB8895A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B95E178C56886924D2585CF438FE8EE8 /* Build configuration list for PBXNativeTarget "AzureClientRuntime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE7292FFB593C1A095DA4EAEA7DE2CD8 /* Debug */,
+				EF52AE768C7544A70F43176089E8276C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
