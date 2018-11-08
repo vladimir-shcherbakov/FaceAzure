@@ -75,5 +75,5 @@ The default base URL. https://{Endpoint}/face/v1.0
  */
 @property  NSString* endpoint;
 
-+ (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint;
++ (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint withSubscriptionKey:(NSString*)key;
 @end

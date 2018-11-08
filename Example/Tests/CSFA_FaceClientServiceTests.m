@@ -9,14 +9,19 @@
 #import <FaceAzure/FaceAzure-umbrella.h>
 
 @interface CSFA_FaceClientServiceTests : XCTestCase
-@property id<CSFA_FaceClientServiceProtocol> service;
+    @property id<CSFA_FaceClientServiceProtocol> service;
 @end
-
 @implementation CSFA_FaceClientServiceTests
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.continueAfterFailure = NO;
-    self.service = [CSFA_FaceClientService createWithEndpoint:@""];
+    NSString* endpoing = @"westus2.api.cognitive.microsoft.com";
+    NSString* key = [[NSProcessInfo processInfo] environment][@"SUBSCRIPTION_KEY"];
+    if (!key) {
+        key = @"UNDEFINED";
+    }
+    self.service = [CSFA_FaceClientService createWithEndpoint:endpoing
+                                          withSubscriptionKey:key];
 }
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -28,23 +33,23 @@
 /**
  * Given query face's faceId, find the similar-looking faces from a faceId array, a face list or a large face list.
  *
- * body parameter: faceId FaceId of the query face. User needs to call Face - Detect first to get a valid faceId. Note that this faceId is not persisted and will expire 24 hours after the detection call
- * body parameter: faceListId An existing user-specified unique candidate face list, created in Face List - Create a Face List. Face list contains a set of persistedFaceIds which are persisted and will never expire. Parameter faceListId, largeFaceListId and faceIds should not be provided at the same time。
- * body parameter: largeFaceListId An existing user-specified unique candidate large face list, created in LargeFaceList - Create. Large face list contains a set of persistedFaceIds which are persisted and will never expire. Parameter faceListId, largeFaceListId and faceIds should not be provided at the same time.
- * body parameter: faceIds An array of candidate faceIds. All of them are created by Face - Detect and the faceIds will expire 24 hours after the detection call. The number of faceIds is limited to 1000. Parameter faceListId, largeFaceListId and faceIds should not be provided at the same time.
- * body parameter: maxNumOfCandidatesReturned The number of top similar faces returned. The valid range is [1, 1000].
- * body parameter: mode Similar face searching mode. It can be "matchPerson" or "matchFace". Possible values include: 'matchPerson', 'matchFace'
+ * parameter: faceId FaceId of the query face. User needs to call Face - Detect first to get a valid faceId. Note that this faceId is not persisted and will expire 24 hours after the detection call
+ * parameter: faceListId An existing user-specified unique candidate face list, created in Face List - Create a Face List. Face list contains a set of persistedFaceIds which are persisted and will never expire. Parameter faceListId, largeFaceListId and faceIds should not be provided at the same time。
+ * parameter: largeFaceListId An existing user-specified unique candidate large face list, created in LargeFaceList - Create. Large face list contains a set of persistedFaceIds which are persisted and will never expire. Parameter faceListId, largeFaceListId and faceIds should not be provided at the same time.
+ * parameter: faceIds An array of candidate faceIds. All of them are created by Face - Detect and the faceIds will expire 24 hours after the detection call. The number of faceIds is limited to 1000. Parameter faceListId, largeFaceListId and faceIds should not be provided at the same time.
+ * parameter: maxNumOfCandidatesReturned The number of top similar faces returned. The valid range is [1, 1000].
+ * parameter: mode Similar face searching mode. It can be "matchPerson" or "matchFace". Possible values include: 'matchPerson', 'matchFace'
  */
 - (void) test_faces_findSimilar {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSUUID* faceId = nil;
-    NSString* faceListId = nil;
-    NSString* largeFaceListId = nil;
-    NSArray<NSUUID*>* faceIds = nil;
-    AZInteger* maxNumOfCandidatesReturned = @20;
-    CSFA_FindSimilarMatchMode* mode = [[CSFA_FindSimilarMatchMode values] firstObject];
-    [op findSimilarWithFaceId:faceId withFaceListId:faceListId withLargeFaceListId:largeFaceListId withFaceIds:faceIds withMaxNumOfCandidatesReturned:maxNumOfCandidatesReturned withMode:mode withCallback:^(NSArray<CSFA_SimilarFace*>* result, AZOperationError* error) {
+    NSUUID *faceId = nil;
+    NSString *faceListId = nil;
+    NSString *largeFaceListId = nil;
+    NSArray<NSUUID*> *faceIds = nil;
+    AZInteger *maxNumOfCandidatesReturned = @20;
+    CSFA_FindSimilarMatchMode *mode = [[CSFA_FindSimilarMatchMode values] firstObject];
+    [op findSimilarWithFaceId:faceId withFaceListId:faceListId withLargeFaceListId:largeFaceListId withFaceIds:faceIds withMaxNumOfCandidatesReturned:maxNumOfCandidatesReturned withMode:mode withCallback:^(NSArray<CSFA_SimilarFace*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -56,13 +61,13 @@
 /**
  * Divide candidate faces into groups based on face similarity.
  *
- * body parameter: faceIds Array of candidate faceId created by Face - Detect. The maximum is 1000 faces
+ * parameter: faceIds Array of candidate faceId created by Face - Detect. The maximum is 1000 faces
  */
 - (void) test_faces_group {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSArray<NSUUID*>* faceIds = nil;
-    [op groupWithFaceIds:faceIds withCallback:^(CSFA_GroupResult* result, AZOperationError* error) {
+    NSArray<NSUUID*> *faceIds = nil;
+    [op groupWithFaceIds:faceIds withCallback:^(CSFA_GroupResult *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -74,21 +79,21 @@
 /**
  * 1-to-many identification to find the closest matches of the specific query person face from a person group or large person group.
  *
- * body parameter: faceIds Array of query faces faceIds, created by the Face - Detect. Each of the faces are identified independently. The valid number of faceIds is between [1, 10].
- * body parameter: personGroupId PersonGroupId of the target person group, created by PersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
- * body parameter: largePersonGroupId LargePersonGroupId of the target large person group, created by LargePersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
- * body parameter: maxNumOfCandidatesReturned The range of maxNumOfCandidatesReturned is between 1 and 5 (default is 1).
- * body parameter: confidenceThreshold Confidence threshold of identification, used to judge whether one face belong to one person. The range of confidenceThreshold is [0, 1] (default specified by algorithm).
+ * parameter: faceIds Array of query faces faceIds, created by the Face - Detect. Each of the faces are identified independently. The valid number of faceIds is between [1, 10].
+ * parameter: personGroupId PersonGroupId of the target person group, created by PersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
+ * parameter: largePersonGroupId LargePersonGroupId of the target large person group, created by LargePersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
+ * parameter: maxNumOfCandidatesReturned The range of maxNumOfCandidatesReturned is between 1 and 5 (default is 1).
+ * parameter: confidenceThreshold Confidence threshold of identification, used to judge whether one face belong to one person. The range of confidenceThreshold is [0, 1] (default specified by algorithm).
  */
 - (void) test_faces_identify {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSArray<NSUUID*>* faceIds = nil;
-    NSString* personGroupId = nil;
-    NSString* largePersonGroupId = nil;
-    AZInteger* maxNumOfCandidatesReturned = @1;
-    AZDouble* confidenceThreshold = nil;
-    [op identifyWithFaceIds:faceIds withPersonGroupId:personGroupId withLargePersonGroupId:largePersonGroupId withMaxNumOfCandidatesReturned:maxNumOfCandidatesReturned withConfidenceThreshold:confidenceThreshold withCallback:^(NSArray<CSFA_IdentifyResult*>* result, AZOperationError* error) {
+    NSArray<NSUUID*> *faceIds = nil;
+    NSString *personGroupId = nil;
+    NSString *largePersonGroupId = nil;
+    AZInteger *maxNumOfCandidatesReturned = @1;
+    AZDouble *confidenceThreshold = nil;
+    [op identifyWithFaceIds:faceIds withPersonGroupId:personGroupId withLargePersonGroupId:largePersonGroupId withMaxNumOfCandidatesReturned:maxNumOfCandidatesReturned withConfidenceThreshold:confidenceThreshold withCallback:^(NSArray<CSFA_IdentifyResult*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -100,15 +105,15 @@
 /**
  * Verify whether two faces belong to a same person or whether one face belongs to a person.
  *
- * body parameter: faceId1 FaceId of the first face, comes from Face - Detect
- * body parameter: faceId2 FaceId of the second face, comes from Face - Detect
+ * parameter: faceId1 FaceId of the first face, comes from Face - Detect
+ * parameter: faceId2 FaceId of the second face, comes from Face - Detect
  */
 - (void) test_faces_verifyFaceToFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSUUID* faceId1 = nil;
-    NSUUID* faceId2 = nil;
-    [op verifyFaceToFaceWithFaceId1:faceId1 withFaceId2:faceId2 withCallback:^(CSFA_VerifyResult* result, AZOperationError* error) {
+    NSUUID *faceId1 = nil;
+    NSUUID *faceId2 = nil;
+    [op verifyFaceToFaceWithFaceId1:faceId1 withFaceId2:faceId2 withCallback:^(CSFA_VerifyResult *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -120,19 +125,19 @@
 /**
  * Detect human faces in an image and returns face locations, and optionally with faceIds, landmarks, and attributes.
  *
- * body parameter: url Publicly reachable URL of an image
- * body parameter: returnFaceId A value indicating whether the operation should return faceIds of detected faces.
- * body parameter: returnFaceLandmarks A value indicating whether the operation should return landmarks of the detected faces.
- * body parameter: returnFaceAttributes Analyze and return the one or more specified face attributes in the comma-separated string like "returnFaceAttributes=age,gender". Supported face attributes include age, gender, headPose, smile, facialHair, glasses and emotion. Note that each face attribute analysis has additional computational and time cost.
+ * parameter: url Publicly reachable URL of an image
+ * parameter: returnFaceId A value indicating whether the operation should return faceIds of detected faces.
+ * parameter: returnFaceLandmarks A value indicating whether the operation should return landmarks of the detected faces.
+ * parameter: returnFaceAttributes Analyze and return the one or more specified face attributes in the comma-separated string like "returnFaceAttributes=age,gender". Supported face attributes include age, gender, headPose, smile, facialHair, glasses and emotion. Note that each face attribute analysis has additional computational and time cost.
  */
 - (void) test_faces_detectWithUrl {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSString* url = nil;
-    AZBoolean* returnFaceId = AZ_YES;
-    AZBoolean* returnFaceLandmarks = AZ_NO;
-    NSArray<CSFA_FaceAttributeType*>* returnFaceAttributes = nil;
-    [op detectWithUrlWithUrl:url withReturnFaceId:returnFaceId withReturnFaceLandmarks:returnFaceLandmarks withReturnFaceAttributes:returnFaceAttributes withCallback:^(NSArray<CSFA_DetectedFace*>* result, AZOperationError* error) {
+    NSString *url = nil;
+    AZBoolean *returnFaceId = AZ_YES;
+    AZBoolean *returnFaceLandmarks = AZ_NO;
+    NSArray<CSFA_FaceAttributeType*> *returnFaceAttributes = nil;
+    [op detectWithUrlWithUrl:url withReturnFaceId:returnFaceId withReturnFaceLandmarks:returnFaceLandmarks withReturnFaceAttributes:returnFaceAttributes withCallback:^(NSArray<CSFA_DetectedFace*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -144,19 +149,19 @@
 /**
  * Verify whether two faces belong to a same person. Compares a face Id with a Person Id.
  *
- * body parameter: faceId FaceId of the face, comes from Face - Detect
- * body parameter: personId Specify a certain person in a person group or a large person group. personId is created in PersonGroup Person - Create or LargePersonGroup Person - Create.
- * body parameter: personGroupId Using existing personGroupId and personId for fast loading a specified person. personGroupId is created in PersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
- * body parameter: largePersonGroupId Using existing largePersonGroupId and personId for fast loading a specified person. largePersonGroupId is created in LargePersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
+ * parameter: faceId FaceId of the face, comes from Face - Detect
+ * parameter: personId Specify a certain person in a person group or a large person group. personId is created in PersonGroup Person - Create or LargePersonGroup Person - Create.
+ * parameter: personGroupId Using existing personGroupId and personId for fast loading a specified person. personGroupId is created in PersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
+ * parameter: largePersonGroupId Using existing largePersonGroupId and personId for fast loading a specified person. largePersonGroupId is created in LargePersonGroup - Create. Parameter personGroupId and largePersonGroupId should not be provided at the same time.
  */
 - (void) test_faces_verifyFaceToPerson {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSUUID* faceId = nil;
-    NSUUID* personId = nil;
-    NSString* personGroupId = nil;
-    NSString* largePersonGroupId = nil;
-    [op verifyFaceToPersonWithFaceId:faceId withPersonId:personId withPersonGroupId:personGroupId withLargePersonGroupId:largePersonGroupId withCallback:^(CSFA_VerifyResult* result, AZOperationError* error) {
+    NSUUID *faceId = nil;
+    NSUUID *personId = nil;
+    NSString *personGroupId = nil;
+    NSString *largePersonGroupId = nil;
+    [op verifyFaceToPersonWithFaceId:faceId withPersonId:personId withPersonGroupId:personGroupId withLargePersonGroupId:largePersonGroupId withCallback:^(CSFA_VerifyResult *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -168,19 +173,19 @@
 /**
  * Detect human faces in an image and returns face locations, and optionally with faceIds, landmarks, and attributes.
  *
- * body parameter: image An image stream.
- * body parameter: returnFaceId A value indicating whether the operation should return faceIds of detected faces.
- * body parameter: returnFaceLandmarks A value indicating whether the operation should return landmarks of the detected faces.
- * body parameter: returnFaceAttributes Analyze and return the one or more specified face attributes in the comma-separated string like "returnFaceAttributes=age,gender". Supported face attributes include age, gender, headPose, smile, facialHair, glasses and emotion. Note that each face attribute analysis has additional computational and time cost.
+ * parameter: image An image stream.
+ * parameter: returnFaceId A value indicating whether the operation should return faceIds of detected faces.
+ * parameter: returnFaceLandmarks A value indicating whether the operation should return landmarks of the detected faces.
+ * parameter: returnFaceAttributes Analyze and return the one or more specified face attributes in the comma-separated string like "returnFaceAttributes=age,gender". Supported face attributes include age, gender, headPose, smile, facialHair, glasses and emotion. Note that each face attribute analysis has additional computational and time cost.
  */
 - (void) test_faces_detectWithStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    AZStream* image = nil;
-    AZBoolean* returnFaceId = AZ_YES;
-    AZBoolean* returnFaceLandmarks = AZ_NO;
-    NSArray<CSFA_FaceAttributeType*>* returnFaceAttributes = nil;
-    [op detectWithStreamWithImage:image withReturnFaceId:returnFaceId withReturnFaceLandmarks:returnFaceLandmarks withReturnFaceAttributes:returnFaceAttributes withCallback:^(NSArray<CSFA_DetectedFace*>* result, AZOperationError* error) {
+    AZStream *image = nil;
+    AZBoolean *returnFaceId = AZ_YES;
+    AZBoolean *returnFaceLandmarks = AZ_NO;
+    NSArray<CSFA_FaceAttributeType*> *returnFaceAttributes = nil;
+    [op detectWithStreamWithImage:image withReturnFaceId:returnFaceId withReturnFaceLandmarks:returnFaceLandmarks withReturnFaceAttributes:returnFaceAttributes withCallback:^(NSArray<CSFA_DetectedFace*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -196,17 +201,17 @@
 /**
  * Create a new person in a specified person group.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_personGroupPersons_create {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op createWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:^(CSFA_Person* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op createWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:^(CSFA_Person *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -218,17 +223,17 @@
 /**
  * List all persons in a person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: start Starting person id to return (used to list a range of persons).
- * body parameter: top Number of persons to return starting with the person id indicated by the 'start' parameter.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: start Starting person id to return (used to list a range of persons).
+ * parameter: top Number of persons to return starting with the person id indicated by the 'start' parameter.
  */
 - (void) test_personGroupPersons_list {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSString* start = nil;
-    AZInteger* top = nil;
-    [op listWithPersonGroupId:personGroupId withStart:start withTop:top withCallback:^(NSArray<CSFA_Person*>* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSString *start = nil;
+    AZInteger *top = nil;
+    [op listWithPersonGroupId:personGroupId withStart:start withTop:top withCallback:^(NSArray<CSFA_Person*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -240,15 +245,15 @@
 /**
  * Delete an existing person from a person group. All stored person data, and face features in the person entry will be deleted.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
  */
 - (void) test_personGroupPersons_delete {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    [op deleteWithPersonGroupId:personGroupId withPersonId:personId withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    [op deleteWithPersonGroupId:personGroupId withPersonId:personId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -260,15 +265,15 @@
 /**
  * Retrieve a person's information, including registered persisted faces, name and userData.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
  */
 - (void) test_personGroupPersons_get {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    [op getWithPersonGroupId:personGroupId withPersonId:personId withCallback:^(CSFA_Person* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    [op getWithPersonGroupId:personGroupId withPersonId:personId withCallback:^(CSFA_Person *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -280,19 +285,19 @@
 /**
  * Update name or userData of a person.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_personGroupPersons_update {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op updateWithPersonGroupId:personGroupId withPersonId:personId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op updateWithPersonGroupId:personGroupId withPersonId:personId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -304,17 +309,17 @@
 /**
  * Delete a face from a person. Relative feature for the persisted face will also be deleted.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_personGroupPersons_deleteFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op deleteFaceWithPersonGroupId:personGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op deleteFaceWithPersonGroupId:personGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -326,17 +331,17 @@
 /**
  * Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging personGroupId).
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_personGroupPersons_getFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op getFaceWithPersonGroupId:personGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op getFaceWithPersonGroupId:personGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -348,19 +353,19 @@
 /**
  * Update a person persisted face's userData field.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
- * body parameter: userData User-provided data attached to the face. The size limit is 1KB.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: userData User-provided data attached to the face. The size limit is 1KB.
  */
 - (void) test_personGroupPersons_updateFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    NSUUID* persistedFaceId = nil;
-    NSString* userData = nil;
-    [op updateFaceWithPersonGroupId:personGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    NSUUID *persistedFaceId = nil;
+    NSString *userData = nil;
+    [op updateFaceWithPersonGroupId:personGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -372,21 +377,21 @@
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: url Publicly reachable URL of an image
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: url Publicly reachable URL of an image
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_personGroupPersons_addFaceFromUrl {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    NSString* url = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromUrlWithPersonGroupId:personGroupId withPersonId:personId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    NSString *url = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromUrlWithPersonGroupId:personGroupId withPersonId:personId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -398,21 +403,21 @@
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: image An image stream.
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: image An image stream.
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_personGroupPersons_addFaceFromStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupPersonsProtocol> op = [self.service personGroupPersons];
-    NSString* personGroupId = nil;
-    NSUUID* personId = nil;
-    AZStream* image = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromStreamWithPersonGroupId:personGroupId withPersonId:personId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSUUID *personId = nil;
+    AZStream *image = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromStreamWithPersonGroupId:personGroupId withPersonId:personId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -428,17 +433,17 @@
 /**
  * Create a new person group with specified personGroupId, name and user-provided userData.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_personGroups_create {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* personGroupId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op createWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op createWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -450,13 +455,13 @@
 /**
  * Delete an existing person group. Persisted face features of all people in the person group will also be deleted.
  *
- * body parameter: personGroupId Id referencing a particular person group.
+ * parameter: personGroupId Id referencing a particular person group.
  */
 - (void) test_personGroups_delete {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* personGroupId = nil;
-    [op deleteWithPersonGroupId:personGroupId withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    [op deleteWithPersonGroupId:personGroupId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -468,13 +473,13 @@
 /**
  * Retrieve the information of a person group, including its name and userData.
  *
- * body parameter: personGroupId Id referencing a particular person group.
+ * parameter: personGroupId Id referencing a particular person group.
  */
 - (void) test_personGroups_get {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* personGroupId = nil;
-    [op getWithPersonGroupId:personGroupId withCallback:^(CSFA_PersonGroup* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    [op getWithPersonGroupId:personGroupId withCallback:^(CSFA_PersonGroup *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -486,17 +491,17 @@
 /**
  * Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.
  *
- * body parameter: personGroupId Id referencing a particular person group.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: personGroupId Id referencing a particular person group.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_personGroups_update {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* personGroupId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op updateWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op updateWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -508,13 +513,13 @@
 /**
  * Retrieve the training status of a person group (completed or ongoing).
  *
- * body parameter: personGroupId Id referencing a particular person group.
+ * parameter: personGroupId Id referencing a particular person group.
  */
 - (void) test_personGroups_getTrainingStatus {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* personGroupId = nil;
-    [op getTrainingStatusWithPersonGroupId:personGroupId withCallback:^(CSFA_TrainingStatus* result, AZOperationError* error) {
+    NSString *personGroupId = nil;
+    [op getTrainingStatusWithPersonGroupId:personGroupId withCallback:^(CSFA_TrainingStatus *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -526,15 +531,15 @@
 /**
  * List person groups and their information.
  *
- * body parameter: start List person groups from the least personGroupId greater than the "start".
- * body parameter: top The number of person groups to list.
+ * parameter: start List person groups from the least personGroupId greater than the "start".
+ * parameter: top The number of person groups to list.
  */
 - (void) test_personGroups_list {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* start = nil;
-    AZInteger* top = @1000;
-    [op listWithStart:start withTop:top withCallback:^(NSArray<CSFA_PersonGroup*>* result, AZOperationError* error) {
+    NSString *start = nil;
+    AZInteger *top = @1000;
+    [op listWithStart:start withTop:top withCallback:^(NSArray<CSFA_PersonGroup*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -546,13 +551,13 @@
 /**
  * Queue a person group training task, the training task may not be started immediately.
  *
- * body parameter: personGroupId Id referencing a particular person group.
+ * parameter: personGroupId Id referencing a particular person group.
  */
 - (void) test_personGroups_train {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_PersonGroupsProtocol> op = [self.service personGroups];
-    NSString* personGroupId = nil;
-    [op trainWithPersonGroupId:personGroupId withCallback:^(AZOperationError* error) {
+    NSString *personGroupId = nil;
+    [op trainWithPersonGroupId:personGroupId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -568,17 +573,17 @@
 /**
  * Create an empty face list. Up to 64 face lists are allowed to exist in one subscription.
  *
- * body parameter: faceListId Id referencing a particular face list.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: faceListId Id referencing a particular face list.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_faceLists_create {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op createWithFaceListId:faceListId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *faceListId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op createWithFaceListId:faceListId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -590,13 +595,13 @@
 /**
  * Retrieve a face list's information.
  *
- * body parameter: faceListId Id referencing a particular face list.
+ * parameter: faceListId Id referencing a particular face list.
  */
 - (void) test_faceLists_get {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    [op getWithFaceListId:faceListId withCallback:^(CSFA_FaceList* result, AZOperationError* error) {
+    NSString *faceListId = nil;
+    [op getWithFaceListId:faceListId withCallback:^(CSFA_FaceList *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -608,17 +613,17 @@
 /**
  * Update information of a face list.
  *
- * body parameter: faceListId Id referencing a particular face list.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: faceListId Id referencing a particular face list.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_faceLists_update {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op updateWithFaceListId:faceListId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *faceListId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op updateWithFaceListId:faceListId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -630,13 +635,13 @@
 /**
  * Delete an existing face list according to faceListId. Persisted face images in the face list will also be deleted.
  *
- * body parameter: faceListId Id referencing a particular face list.
+ * parameter: faceListId Id referencing a particular face list.
  */
 - (void) test_faceLists_delete {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    [op deleteWithFaceListId:faceListId withCallback:^(AZOperationError* error) {
+    NSString *faceListId = nil;
+    [op deleteWithFaceListId:faceListId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -652,7 +657,7 @@
 - (void) test_faceLists_list {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    [op listWithCallback:^(NSArray<CSFA_FaceList*>* result, AZOperationError* error) {
+    [op listWithCallback:^(NSArray<CSFA_FaceList*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -664,15 +669,15 @@
 /**
  * Delete an existing face from a face list (given by a persisitedFaceId and a faceListId). Persisted image related to the face will also be deleted.
  *
- * body parameter: faceListId Id referencing a particular face list.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: faceListId Id referencing a particular face list.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_faceLists_deleteFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op deleteFaceWithFaceListId:faceListId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError* error) {
+    NSString *faceListId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op deleteFaceWithFaceListId:faceListId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -684,19 +689,19 @@
 /**
  * Add a face to a face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
  *
- * body parameter: faceListId Id referencing a particular face list.
- * body parameter: url Publicly reachable URL of an image
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: faceListId Id referencing a particular face list.
+ * parameter: url Publicly reachable URL of an image
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_faceLists_addFaceFromUrl {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    NSString* url = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromUrlWithFaceListId:faceListId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *faceListId = nil;
+    NSString *url = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromUrlWithFaceListId:faceListId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -708,19 +713,19 @@
 /**
  * Add a face to a face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
  *
- * body parameter: faceListId Id referencing a particular face list.
- * body parameter: image An image stream.
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: faceListId Id referencing a particular face list.
+ * parameter: image An image stream.
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_faceLists_addFaceFromStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FaceListsProtocol> op = [self.service faceLists];
-    NSString* faceListId = nil;
-    AZStream* image = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromStreamWithFaceListId:faceListId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *faceListId = nil;
+    AZStream *image = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromStreamWithFaceListId:faceListId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -736,17 +741,17 @@
 /**
  * Create a new person in a specified large person group.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_largePersonGroupPersons_create {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op createWithLargePersonGroupId:largePersonGroupId withName:name withUserData:userData withCallback:^(CSFA_Person* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op createWithLargePersonGroupId:largePersonGroupId withName:name withUserData:userData withCallback:^(CSFA_Person *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -758,17 +763,17 @@
 /**
  * List all persons in a large person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: start Starting person id to return (used to list a range of persons).
- * body parameter: top Number of persons to return starting with the person id indicated by the 'start' parameter.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: start Starting person id to return (used to list a range of persons).
+ * parameter: top Number of persons to return starting with the person id indicated by the 'start' parameter.
  */
 - (void) test_largePersonGroupPersons_list {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSString* start = nil;
-    AZInteger* top = nil;
-    [op listWithLargePersonGroupId:largePersonGroupId withStart:start withTop:top withCallback:^(NSArray<CSFA_Person*>* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSString *start = nil;
+    AZInteger *top = nil;
+    [op listWithLargePersonGroupId:largePersonGroupId withStart:start withTop:top withCallback:^(NSArray<CSFA_Person*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -780,15 +785,15 @@
 /**
  * Delete an existing person from a large person group. All stored person data, and face features in the person entry will be deleted.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
  */
 - (void) test_largePersonGroupPersons_delete {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    [op deleteWithLargePersonGroupId:largePersonGroupId withPersonId:personId withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    [op deleteWithLargePersonGroupId:largePersonGroupId withPersonId:personId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -800,15 +805,15 @@
 /**
  * Retrieve a person's information, including registered persisted faces, name and userData.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
  */
 - (void) test_largePersonGroupPersons_get {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    [op getWithLargePersonGroupId:largePersonGroupId withPersonId:personId withCallback:^(CSFA_Person* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    [op getWithLargePersonGroupId:largePersonGroupId withPersonId:personId withCallback:^(CSFA_Person *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -820,19 +825,19 @@
 /**
  * Update name or userData of a person.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_largePersonGroupPersons_update {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op updateWithLargePersonGroupId:largePersonGroupId withPersonId:personId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op updateWithLargePersonGroupId:largePersonGroupId withPersonId:personId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -844,17 +849,17 @@
 /**
  * Delete a face from a person. Relative feature for the persisted face will also be deleted.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_largePersonGroupPersons_deleteFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op deleteFaceWithLargePersonGroupId:largePersonGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op deleteFaceWithLargePersonGroupId:largePersonGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -866,17 +871,17 @@
 /**
  * Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging largePersonGroupId).
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_largePersonGroupPersons_getFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op getFaceWithLargePersonGroupId:largePersonGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op getFaceWithLargePersonGroupId:largePersonGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -888,19 +893,19 @@
 /**
  * Update a person persisted face's userData field.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
- * body parameter: userData User-provided data attached to the face. The size limit is 1KB.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: userData User-provided data attached to the face. The size limit is 1KB.
  */
 - (void) test_largePersonGroupPersons_updateFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    NSUUID* persistedFaceId = nil;
-    NSString* userData = nil;
-    [op updateFaceWithLargePersonGroupId:largePersonGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    NSUUID *persistedFaceId = nil;
+    NSString *userData = nil;
+    [op updateFaceWithLargePersonGroupId:largePersonGroupId withPersonId:personId withPersistedFaceId:persistedFaceId withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -912,21 +917,21 @@
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: url Publicly reachable URL of an image
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: url Publicly reachable URL of an image
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_largePersonGroupPersons_addFaceFromUrl {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    NSString* url = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromUrlWithLargePersonGroupId:largePersonGroupId withPersonId:personId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    NSString *url = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromUrlWithLargePersonGroupId:largePersonGroupId withPersonId:personId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -938,21 +943,21 @@
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: personId Id referencing a particular person.
- * body parameter: image An image stream.
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: personId Id referencing a particular person.
+ * parameter: image An image stream.
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_largePersonGroupPersons_addFaceFromStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupPersonsProtocol> op = [self.service largePersonGroupPersons];
-    NSString* largePersonGroupId = nil;
-    NSUUID* personId = nil;
-    AZStream* image = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromStreamWithLargePersonGroupId:largePersonGroupId withPersonId:personId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSUUID *personId = nil;
+    AZStream *image = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromStreamWithLargePersonGroupId:largePersonGroupId withPersonId:personId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -968,17 +973,17 @@
 /**
  * Create a new large person group with specified largePersonGroupId, name and user-provided userData.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_largePersonGroups_create {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* largePersonGroupId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op createWithLargePersonGroupId:largePersonGroupId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op createWithLargePersonGroupId:largePersonGroupId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -990,13 +995,13 @@
 /**
  * Delete an existing large person group. Persisted face features of all people in the large person group will also be deleted.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
  */
 - (void) test_largePersonGroups_delete {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* largePersonGroupId = nil;
-    [op deleteWithLargePersonGroupId:largePersonGroupId withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    [op deleteWithLargePersonGroupId:largePersonGroupId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1008,13 +1013,13 @@
 /**
  * Retrieve the information of a large person group, including its name and userData.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
  */
 - (void) test_largePersonGroups_get {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* largePersonGroupId = nil;
-    [op getWithLargePersonGroupId:largePersonGroupId withCallback:^(CSFA_LargePersonGroup* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    [op getWithLargePersonGroupId:largePersonGroupId withCallback:^(CSFA_LargePersonGroup *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1026,17 +1031,17 @@
 /**
  * Update an existing large person group's display name and userData. The properties which does not appear in request body will not be updated.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_largePersonGroups_update {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* largePersonGroupId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op updateWithLargePersonGroupId:largePersonGroupId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op updateWithLargePersonGroupId:largePersonGroupId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1048,13 +1053,13 @@
 /**
  * Retrieve the training status of a large person group (completed or ongoing).
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
  */
 - (void) test_largePersonGroups_getTrainingStatus {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* largePersonGroupId = nil;
-    [op getTrainingStatusWithLargePersonGroupId:largePersonGroupId withCallback:^(CSFA_TrainingStatus* result, AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    [op getTrainingStatusWithLargePersonGroupId:largePersonGroupId withCallback:^(CSFA_TrainingStatus *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1066,15 +1071,15 @@
 /**
  * List large person groups and their information.
  *
- * body parameter: start List large person groups from the least largePersonGroupId greater than the "start".
- * body parameter: top The number of large person groups to list.
+ * parameter: start List large person groups from the least largePersonGroupId greater than the "start".
+ * parameter: top The number of large person groups to list.
  */
 - (void) test_largePersonGroups_list {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* start = nil;
-    AZInteger* top = @1000;
-    [op listWithStart:start withTop:top withCallback:^(NSArray<CSFA_LargePersonGroup*>* result, AZOperationError* error) {
+    NSString *start = nil;
+    AZInteger *top = @1000;
+    [op listWithStart:start withTop:top withCallback:^(NSArray<CSFA_LargePersonGroup*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1086,13 +1091,13 @@
 /**
  * Queue a large person group training task, the training task may not be started immediately.
  *
- * body parameter: largePersonGroupId Id referencing a particular large person group.
+ * parameter: largePersonGroupId Id referencing a particular large person group.
  */
 - (void) test_largePersonGroups_train {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargePersonGroupsProtocol> op = [self.service largePersonGroups];
-    NSString* largePersonGroupId = nil;
-    [op trainWithLargePersonGroupId:largePersonGroupId withCallback:^(AZOperationError* error) {
+    NSString *largePersonGroupId = nil;
+    [op trainWithLargePersonGroupId:largePersonGroupId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1108,17 +1113,17 @@
 /**
  * Create an empty large face list. Up to 64 large face lists are allowed to exist in one subscription.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_largeFaceLists_create {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op createWithLargeFaceListId:largeFaceListId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op createWithLargeFaceListId:largeFaceListId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1130,13 +1135,13 @@
 /**
  * Retrieve a large face list's information.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: largeFaceListId Id referencing a particular large face list.
  */
 - (void) test_largeFaceLists_get {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    [op getWithLargeFaceListId:largeFaceListId withCallback:^(CSFA_LargeFaceList* result, AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    [op getWithLargeFaceListId:largeFaceListId withCallback:^(CSFA_LargeFaceList *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1148,17 +1153,17 @@
 /**
  * Update information of a large face list.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: name User defined name, maximum length is 128.
- * body parameter: userData User specified data. Length should not exceed 16KB.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: name User defined name, maximum length is 128.
+ * parameter: userData User specified data. Length should not exceed 16KB.
  */
 - (void) test_largeFaceLists_update {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSString* name = nil;
-    NSString* userData = nil;
-    [op updateWithLargeFaceListId:largeFaceListId withName:name withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
+    [op updateWithLargeFaceListId:largeFaceListId withName:name withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1170,13 +1175,13 @@
 /**
  * Delete an existing large face list according to faceListId. Persisted face images in the large face list will also be deleted.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: largeFaceListId Id referencing a particular large face list.
  */
 - (void) test_largeFaceLists_delete {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    [op deleteWithLargeFaceListId:largeFaceListId withCallback:^(AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    [op deleteWithLargeFaceListId:largeFaceListId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1188,13 +1193,13 @@
 /**
  * Retrieve the training status of a large face list (completed or ongoing).
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: largeFaceListId Id referencing a particular large face list.
  */
 - (void) test_largeFaceLists_getTrainingStatus {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    [op getTrainingStatusWithLargeFaceListId:largeFaceListId withCallback:^(CSFA_TrainingStatus* result, AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    [op getTrainingStatusWithLargeFaceListId:largeFaceListId withCallback:^(CSFA_TrainingStatus *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1210,7 +1215,7 @@
 - (void) test_largeFaceLists_list {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    [op listWithCallback:^(NSArray<CSFA_LargeFaceList*>* result, AZOperationError* error) {
+    [op listWithCallback:^(NSArray<CSFA_LargeFaceList*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1222,13 +1227,13 @@
 /**
  * Queue a large face list training task, the training task may not be started immediately.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: largeFaceListId Id referencing a particular large face list.
  */
 - (void) test_largeFaceLists_train {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    [op trainWithLargeFaceListId:largeFaceListId withCallback:^(AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    [op trainWithLargeFaceListId:largeFaceListId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1240,15 +1245,15 @@
 /**
  * Delete an existing face from a large face list (given by a persisitedFaceId and a largeFaceListId). Persisted image related to the face will also be deleted.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_largeFaceLists_deleteFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op deleteFaceWithLargeFaceListId:largeFaceListId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op deleteFaceWithLargeFaceListId:largeFaceListId withPersistedFaceId:persistedFaceId withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1260,15 +1265,15 @@
 /**
  * Retrieve information about a persisted face (specified by persistedFaceId and its belonging largeFaceListId).
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
  */
 - (void) test_largeFaceLists_getFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSUUID* persistedFaceId = nil;
-    [op getFaceWithLargeFaceListId:largeFaceListId withPersistedFaceId:persistedFaceId withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSUUID *persistedFaceId = nil;
+    [op getFaceWithLargeFaceListId:largeFaceListId withPersistedFaceId:persistedFaceId withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1280,17 +1285,17 @@
 /**
  * Update a persisted face's userData field.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
- * body parameter: userData User-provided data attached to the face. The size limit is 1KB.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: persistedFaceId Id referencing a particular persistedFaceId of an existing face.
+ * parameter: userData User-provided data attached to the face. The size limit is 1KB.
  */
 - (void) test_largeFaceLists_updateFace {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSUUID* persistedFaceId = nil;
-    NSString* userData = nil;
-    [op updateFaceWithLargeFaceListId:largeFaceListId withPersistedFaceId:persistedFaceId withUserData:userData withCallback:^(AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSUUID *persistedFaceId = nil;
+    NSString *userData = nil;
+    [op updateFaceWithLargeFaceListId:largeFaceListId withPersistedFaceId:persistedFaceId withUserData:userData withCallback:^(AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1302,19 +1307,19 @@
 /**
  * Add a face to a large face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: url Publicly reachable URL of an image
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: url Publicly reachable URL of an image
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_largeFaceLists_addFaceFromUrl {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSString* url = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromUrlWithLargeFaceListId:largeFaceListId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSString *url = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromUrlWithLargeFaceListId:largeFaceListId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1326,17 +1331,17 @@
 /**
  * List all faces in a large face list, and retrieve face information (including userData and persistedFaceIds of registered faces of the face).
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: start Starting face id to return (used to list a range of faces).
- * body parameter: top Number of faces to return starting with the face id indicated by the 'start' parameter.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: start Starting face id to return (used to list a range of faces).
+ * parameter: top Number of faces to return starting with the face id indicated by the 'start' parameter.
  */
 - (void) test_largeFaceLists_listFaces {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    NSString* start = nil;
-    AZInteger* top = nil;
-    [op listFacesWithLargeFaceListId:largeFaceListId withStart:start withTop:top withCallback:^(NSArray<CSFA_PersistedFace*>* result, AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    NSString *start = nil;
+    AZInteger *top = nil;
+    [op listFacesWithLargeFaceListId:largeFaceListId withStart:start withTop:top withCallback:^(NSArray<CSFA_PersistedFace*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -1348,19 +1353,19 @@
 /**
  * Add a face to a large face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
  *
- * body parameter: largeFaceListId Id referencing a particular large face list.
- * body parameter: image An image stream.
- * body parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
- * body parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
+ * parameter: largeFaceListId Id referencing a particular large face list.
+ * parameter: image An image stream.
+ * parameter: userData User-specified data about the face for any purpose. The maximum length is 1KB.
+ * parameter: targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
  */
 - (void) test_largeFaceLists_addFaceFromStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_LargeFaceListsProtocol> op = [self.service largeFaceLists];
-    NSString* largeFaceListId = nil;
-    AZStream* image = nil;
-    NSString* userData = nil;
-    NSArray<AZInteger*>* targetFace = nil;
-    [op addFaceFromStreamWithLargeFaceListId:largeFaceListId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace* result, AZOperationError* error) {
+    NSString *largeFaceListId = nil;
+    AZStream *image = nil;
+    NSString *userData = nil;
+    NSArray<AZInteger*> *targetFace = nil;
+    [op addFaceFromStreamWithLargeFaceListId:largeFaceListId withImage:image withUserData:userData withTargetFace:targetFace withCallback:^(CSFA_PersistedFace *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
     }];

@@ -10,19 +10,19 @@
  * Initializes a new instance of the CSFA_FaceClientService class.
  */
 @implementation CSFA_FaceClientService
-- (instancetype)initWithEndpoint:(NSString*)endpoint {
+- (instancetype)initWithEndpoint:(NSString*)endpoint  withSubscriptionKey:(NSString*)key{
     self = [super init];
     if (self) {
         _DEFAULT_BASE_URL = @"https://{Endpoint}/face/v1.0";
-        _key = @"UNDEFINED";
+        _key = key;
         _specialHeaders = @{@"ocp-apim-subscription-key" : self.key};
         _endpoint = endpoint;
     }
     return self;
 }
 
-+ (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint {
-    CSFA_FaceClientService* client = [[CSFA_FaceClientService alloc] initWithEndpoint:endpoint];
++ (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint  withSubscriptionKey:(NSString*)key{
+    CSFA_FaceClientService* client = [[CSFA_FaceClientService alloc] initWithEndpoint:endpoint withSubscriptionKey:key];
     return client;
 }
 
