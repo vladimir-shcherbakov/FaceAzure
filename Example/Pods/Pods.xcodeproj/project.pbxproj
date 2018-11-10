@@ -13,7 +13,7 @@
 		0C25D0F5E356D2B39539E5A07BFC20DB /* Pods-FaceAzure_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6D36AD87E28128FE6EF0DC140D18D /* Pods-FaceAzure_Example-dummy.m */; };
 		0C38846F549CC028D6D786CC9B257EF6 /* CSFA_DetectedFace.h in Headers */ = {isa = PBXBuildFile; fileRef = B741DF7D5E30F583B3034718C2713938 /* CSFA_DetectedFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D57AAB14936C5FA71C09F9CBA8F8D1F /* AzureClientRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C09CE897F271F6E9F055B9EE1AFD80 /* AzureClientRuntime.framework */; };
-		0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		118D6F5E2387E95993EF032FCECE8870 /* CSFA_FindSimilarMatchMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DDE92D85459BB2F398FD0F4CD7970EB /* CSFA_FindSimilarMatchMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		123F2107E1B9652596A19D173C9C19A7 /* AZRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */; };
@@ -187,9 +187,9 @@
 		0567AB3080F8C60C5CEF18ABF3C15EEC /* Pods-FaceAzure_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FaceAzure_Example-resources.sh"; sourceTree = "<group>"; };
 		05CCC91E3E0661A02D4844894F01070A /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = FaceAzure/Classes/ReplaceMe.m; sourceTree = "<group>"; };
 		0AC67A82C30566D336F1551BE35513C1 /* CSFA_IdentifyResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_IdentifyResult.h; sourceTree = "<group>"; };
-		0CBEC032A8F4E8507A6C70F4719F9896 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CBEC032A8F4E8507A6C70F4719F9896 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AzureClientRuntime.framework; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3C89533D265318AF51D74980D83D10 /* Pods-FaceAzure_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FaceAzure_Example.modulemap"; sourceTree = "<group>"; };
-		0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AzureClientRuntime.h; sourceTree = "<group>"; };
+		0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-umbrella.h"; sourceTree = "<group>"; };
 		0EFE16BC314ED01DFE42B764E50EC251 /* FaceAzure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FaceAzure.modulemap; sourceTree = "<group>"; };
 		110758D4A6CAB659ACDC368840BFF725 /* CSFA_Makeup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Makeup.m; sourceTree = "<group>"; };
 		13DBF413C05C9CC381F45BF3CCFD70C7 /* CSFA_NoiseLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_NoiseLevel.h; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		4543398669D3ABE86E8749CA87840E6E /* CSFA_SimilarFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_SimilarFace.m; sourceTree = "<group>"; };
 		457B25E1760BBC6DA057E9C156F81B24 /* Pods-FaceAzure_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FaceAzure_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		470D4F8F37D44CDB0BC20258C416F4F7 /* CSFA_PersistedFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_PersistedFace.h; sourceTree = "<group>"; };
-		47E82C87446C5CE9FEFE35CFB433737E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		47E82C87446C5CE9FEFE35CFB433737E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		48B6C390914D3AEE4CEC47ABB46798AB /* AzureClientRuntime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AzureClientRuntime.modulemap; sourceTree = "<group>"; };
 		4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureTypes.h; path = AzureClientRuntime/Classes/AzureTypes.h; sourceTree = "<group>"; };
 		4AA973EA644EA05C8EB84E7952A359F6 /* CSFA_LargePersonGroupPersons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_LargePersonGroupPersons.m; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		5DD081F2306515A4CE172C2E9458DDD1 /* CSFA_HeadPose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_HeadPose.h; sourceTree = "<group>"; };
 		5DDE92D85459BB2F398FD0F4CD7970EB /* CSFA_FindSimilarMatchMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_FindSimilarMatchMode.h; sourceTree = "<group>"; };
 		5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZRequestParameters.m; path = AzureClientRuntime/Classes/AZRequestParameters.m; sourceTree = "<group>"; };
-		607B7027D2BF52FDC42F8BF7437FE265 /* Pods_FaceAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		607B7027D2BF52FDC42F8BF7437FE265 /* Pods_FaceAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FaceAzure_Example.framework; path = "Pods-FaceAzure_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D257785E6196FED4AF5361EBC32796 /* CSFA_Occlusion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Occlusion.m; sourceTree = "<group>"; };
 		60D4083A6D08B1398DAC9720202AE41A /* CSFA_DetectedFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_DetectedFace.m; sourceTree = "<group>"; };
 		62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureTypes.m; path = AzureClientRuntime/Classes/AzureTypes.m; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 		90BA130C4A54C8F44E1417ADA609A7CE /* Pods-FaceAzure_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FaceAzure_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		912B06CEFC7F846463CA8AE5E4C79364 /* CSFA_IdentifyRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_IdentifyRequest.h; sourceTree = "<group>"; };
 		92E2445D0CBF70454CE70A53C8DD09E8 /* CSFA_LargePersonGroups.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargePersonGroups.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		942DFBE32E7288D12F133D9C66A9D635 /* CSFA_FindSimilarMatchMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FindSimilarMatchMode.m; sourceTree = "<group>"; };
 		95743E2EC8C25BEE2EE1BF744EDE8389 /* CSFA_NameAndUserDataContract.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_NameAndUserDataContract.m; sourceTree = "<group>"; };
 		9590AE99BEE581F8881D367D1F852915 /* CSFA_AccessoryType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_AccessoryType.m; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 		A44642BC634FF4BC8F59FF96BA8F02B6 /* CSFA_FaceClientService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSFA_FaceClientService.h; path = FaceAzure/Classes/CSFA_FaceClientService.h; sourceTree = "<group>"; };
 		A4CBB1F76CAB669F8FFB7945926524CF /* CSFA_PersonGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_PersonGroups.m; sourceTree = "<group>"; };
 		A67774F9D55B0DC4F5E9CB8D1E7C1593 /* CSFA_ExposureLevel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_ExposureLevel.m; sourceTree = "<group>"; };
-		A6A7CF8F8ADB074BF1078E9872DEDDD9 /* FaceAzure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = FaceAzure.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6A7CF8F8ADB074BF1078E9872DEDDD9 /* FaceAzure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = FaceAzure.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6DC46954104A912F102CF1E3C11AEC0 /* CSFA_FaceLists.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceLists.m; sourceTree = "<group>"; };
 		A71C8CE878C4CCCCF4823BD4BCC96641 /* CSFA_Person.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_Person.h; sourceTree = "<group>"; };
 		A79019659894C76FFCA4530894195FCA /* AzureDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureDate.m; path = AzureClientRuntime/Classes/AzureDate.m; sourceTree = "<group>"; };
@@ -295,13 +295,13 @@
 		AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZOperationError.m; path = AzureClientRuntime/Classes/AZOperationError.m; sourceTree = "<group>"; };
 		B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AzureClientRuntime-dummy.m"; sourceTree = "<group>"; };
 		B0C40DA1B636E65C2CCBFB974063010A /* Pods-FaceAzure_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FaceAzure_Example-umbrella.h"; sourceTree = "<group>"; };
-		B16F945000F0FF825586EFFD7F32950D /* FaceAzure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FaceAzure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B16F945000F0FF825586EFFD7F32950D /* FaceAzure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FaceAzure.framework; path = FaceAzure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EDA4F5F4C6D19475E5C87F65A86F4F /* CSFA_FaceLandmarks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_FaceLandmarks.m; sourceTree = "<group>"; };
 		B42BFE63248E55DA96A7DEF6AF5F508B /* CSFA_LargeFaceList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_LargeFaceList.h; sourceTree = "<group>"; };
 		B6B892E700057396FBFFA60FD5FD43DD /* CSFA_VerifyFaceToPersonRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_VerifyFaceToPersonRequest.m; sourceTree = "<group>"; };
 		B741DF7D5E30F583B3034718C2713938 /* CSFA_DetectedFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_DetectedFace.h; sourceTree = "<group>"; };
 		B7AB7385A534ABC51BE3B0957357FE47 /* CSFA_IdentifyCandidate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_IdentifyCandidate.h; sourceTree = "<group>"; };
-		B8CEC2DD99FB7A8EFBB5146BE4F11E9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B8CEC2DD99FB7A8EFBB5146BE4F11E9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B94A1CA6ED178C32B26936084A26392C /* CSFA_PersistedFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_PersistedFace.m; sourceTree = "<group>"; };
 		BCA16AE0093CCB325F8C7638C5201516 /* CSFA_IdentifyRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_IdentifyRequest.m; sourceTree = "<group>"; };
 		BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZDefaultErrorModel.m; path = AzureClientRuntime/Classes/AZDefaultErrorModel.m; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		C74E3681CF670FC931F0BA8453F31CAC /* CSFA_SimilarFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_SimilarFace.h; sourceTree = "<group>"; };
 		C7B9C6EC963F90471BEBD3F02C548EFE /* CSFA_Noise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Noise.m; sourceTree = "<group>"; };
 		CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZJsonCoder.m; path = AzureClientRuntime/Classes/AZJsonCoder.m; sourceTree = "<group>"; };
-		CDAEE3350DB2CAF8CF45D830711B3E3E /* Pods_FaceAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceAzure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDAEE3350DB2CAF8CF45D830711B3E3E /* Pods_FaceAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FaceAzure_Tests.framework; path = "Pods-FaceAzure_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD16F9C5EC6D93DA8E26698E4BACC0C /* CSFA_HairColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_HairColor.h; sourceTree = "<group>"; };
 		CE0AD858C26791BBD564B85C6099EB63 /* CSFA_VerifyResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSFA_VerifyResult.h; sourceTree = "<group>"; };
 		CED73968AD0242C95306310B9577F5A2 /* CSFA_Hair.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSFA_Hair.m; sourceTree = "<group>"; };
@@ -432,6 +432,7 @@
 				62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */,
 				3BC749AE364DE16D1BAA7F22BB623265 /* Support Files */,
 			);
+			name = AzureClientRuntime;
 			path = AzureClientRuntime;
 			sourceTree = "<group>";
 		};
@@ -469,7 +470,7 @@
 				8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */,
 				B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */,
 				EE416F9CB6D83C3EE38B8352181C2A76 /* AzureClientRuntime-prefix.pch */,
-				0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */,
+				0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */,
 				E1CBFAC896F8EE71C3FDB740513BF144 /* Info.plist */,
 			);
 			name = "Support Files";
@@ -727,7 +728,7 @@
 				FAD76B3F982D5A85B9C4B3CBBA9AE4FE /* AZOperationError.h in Headers */,
 				6580A53E2728D096C39E4E7B11ECAF02 /* AZRequestHelper.h in Headers */,
 				5A3CDAA672B2034D45BB203D4862C85C /* AZRequestParameters.h in Headers */,
-				0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime.h in Headers */,
+				0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime-umbrella.h in Headers */,
 				0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */,
 				C0CA4D06410919FD54DAB36A1C97E5AD /* AzureTypes.h in Headers */,
 			);

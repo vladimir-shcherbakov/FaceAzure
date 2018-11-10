@@ -32,7 +32,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided
  */
-- (void)createWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError*))callback {
+- (void)createWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError *))callback {
     NSString* name = nil;
     NSString* userData = nil;
     [self createWithFaceListId:faceListId withName:name withUserData:userData withCallback:callback];
@@ -47,7 +47,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)createWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback {
+- (void)createWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -119,7 +119,7 @@
  * @param callback A block where CSFA_FaceList is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)getWithFaceListId:(NSString *)faceListId withCallback:(void(^)(CSFA_FaceList*, AZOperationError*))callback {
+- (void)getWithFaceListId:(NSString *)faceListId withCallback:(void(^)(CSFA_FaceList *, AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -171,7 +171,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided
  */
-- (void)updateWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError*))callback {
+- (void)updateWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError *))callback {
     NSString* name = nil;
     NSString* userData = nil;
     [self updateWithFaceListId:faceListId withName:name withUserData:userData withCallback:callback];
@@ -186,7 +186,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)updateWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback {
+- (void)updateWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -258,7 +258,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)deleteWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError*))callback {
+- (void)deleteWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -307,7 +307,7 @@
  *
  * @param callback A block where NSArray<CSFA_FaceList*> is a result object and AZOperationError is nil, if the operation is successful
  */
-- (void)listWithCallback:(void(^)(NSArray<CSFA_FaceList*>*, AZOperationError*))callback {
+- (void)listWithCallback:(void(^)(NSArray<CSFA_FaceList*>*, AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -341,7 +341,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)deleteFaceWithFaceListId:(NSString *)faceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError*))callback {
+- (void)deleteFaceWithFaceListId:(NSString *)faceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -399,7 +399,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided
  */
-- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback {
+- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback {
     NSString* userData = nil;
     NSArray<AZInteger*>* targetFace = nil;
     [self addFaceFromUrlWithFaceListId:faceListId withUrl:url withUserData:userData withTargetFace:targetFace withCallback:callback];
@@ -415,7 +415,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback {
+- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException
@@ -484,7 +484,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided
  */
-- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback {
+- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback {
     NSString* userData = nil;
     NSArray<AZInteger*>* targetFace = nil;
     [self addFaceFromStreamWithFaceListId:faceListId withImage:image withUserData:userData withTargetFace:targetFace withCallback:callback];
@@ -500,7 +500,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback {
+- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException

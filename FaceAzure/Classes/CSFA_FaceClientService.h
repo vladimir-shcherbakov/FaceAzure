@@ -22,43 +22,43 @@
  * Gets the CSFA_FacesProtocol object to access its operations.
  * @return the CSFA_Faces object.
  */
-- (id<CSFA_FacesProtocol>) faces;
+- (id<CSFA_FacesProtocol>)faces;
 
 /**
  * Gets the CSFA_PersonGroupPersonsProtocol object to access its operations.
  * @return the CSFA_PersonGroupPersons object.
  */
-- (id<CSFA_PersonGroupPersonsProtocol>) personGroupPersons;
+- (id<CSFA_PersonGroupPersonsProtocol>)personGroupPersons;
 
 /**
  * Gets the CSFA_PersonGroupsProtocol object to access its operations.
  * @return the CSFA_PersonGroups object.
  */
-- (id<CSFA_PersonGroupsProtocol>) personGroups;
+- (id<CSFA_PersonGroupsProtocol>)personGroups;
 
 /**
  * Gets the CSFA_FaceListsProtocol object to access its operations.
  * @return the CSFA_FaceLists object.
  */
-- (id<CSFA_FaceListsProtocol>) faceLists;
+- (id<CSFA_FaceListsProtocol>)faceLists;
 
 /**
  * Gets the CSFA_LargePersonGroupPersonsProtocol object to access its operations.
  * @return the CSFA_LargePersonGroupPersons object.
  */
-- (id<CSFA_LargePersonGroupPersonsProtocol>) largePersonGroupPersons;
+- (id<CSFA_LargePersonGroupPersonsProtocol>)largePersonGroupPersons;
 
 /**
  * Gets the CSFA_LargePersonGroupsProtocol object to access its operations.
  * @return the CSFA_LargePersonGroups object.
  */
-- (id<CSFA_LargePersonGroupsProtocol>) largePersonGroups;
+- (id<CSFA_LargePersonGroupsProtocol>)largePersonGroups;
 
 /**
  * Gets the CSFA_LargeFaceListsProtocol object to access its operations.
  * @return the CSFA_LargeFaceLists object.
  */
-- (id<CSFA_LargeFaceListsProtocol>) largeFaceLists;
+- (id<CSFA_LargeFaceListsProtocol>)largeFaceLists;
 
 @end
 
@@ -66,14 +66,14 @@
 /**
 The default base URL. https://{Endpoint}/face/v1.0
 */
-@property (readonly) NSString* DEFAULT_BASE_URL;
-@property (readonly) NSString* key;
-@property (readonly) NSDictionary* specialHeaders;
+@property(readonly)NSString *DEFAULT_BASE_URL;
+@property(readonly)NSString *key;
+@property(readonly)NSDictionary *specialHeaders;
 
 /**
  * Supported Cognitive Services endpoints (protocol and hostname, for example: https://westus.api.cognitive.microsoft.com)..
  */
-@property  NSString* endpoint;
+@property NSString *endpoint;
 
 + (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint withSubscriptionKey:(NSString*)key;
 @end

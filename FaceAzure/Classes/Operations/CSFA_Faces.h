@@ -26,7 +26,7 @@
  * @param callback A block where NSArray<CSFA_SimilarFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)findSimilarWithFaceId:(NSUUID *)faceId withCallback:(void(^)(NSArray<CSFA_SimilarFace*>*, AZOperationError*))callback;
+- (void)findSimilarWithFaceId:(NSUUID *)faceId withCallback:(void(^)(NSArray<CSFA_SimilarFace*> *, AZOperationError *))callback;
 
 /**
  * Given query face's faceId, find the similar-looking faces from a faceId array, a face list or a large face list.
@@ -40,7 +40,7 @@
  * @param callback A block where NSArray<CSFA_SimilarFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)findSimilarWithFaceId:(NSUUID *)faceId withFaceListId:(NSString *)faceListId withLargeFaceListId:(NSString *)largeFaceListId withFaceIds:(NSArray<NSUUID*> *)faceIds withMaxNumOfCandidatesReturned:(AZInteger *)maxNumOfCandidatesReturned withMode:(CSFA_FindSimilarMatchMode *)mode withCallback:(void(^)(NSArray<CSFA_SimilarFace*>*, AZOperationError*))callback;
+- (void)findSimilarWithFaceId:(NSUUID *)faceId withFaceListId:(NSString *)faceListId withLargeFaceListId:(NSString *)largeFaceListId withFaceIds:(NSArray<NSUUID*> *)faceIds withMaxNumOfCandidatesReturned:(AZInteger *)maxNumOfCandidatesReturned withMode:(CSFA_FindSimilarMatchMode *)mode withCallback:(void(^)(NSArray<CSFA_SimilarFace*> *, AZOperationError *))callback;
 
 /**
  * Divide candidate faces into groups based on face similarity.
@@ -49,7 +49,7 @@
  * @param callback A block where CSFA_GroupResult is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)groupWithFaceIds:(NSArray<NSUUID*> *)faceIds withCallback:(void(^)(CSFA_GroupResult*, AZOperationError*))callback;
+- (void)groupWithFaceIds:(NSArray<NSUUID*> *)faceIds withCallback:(void(^)(CSFA_GroupResult *, AZOperationError *))callback;
 
 /**
  * 1-to-many identification to find the closest matches of the specific query person face from a person group or large person group.
@@ -58,7 +58,7 @@
  * @param callback A block where NSArray<CSFA_IdentifyResult*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)identifyWithFaceIds:(NSArray<NSUUID*> *)faceIds withCallback:(void(^)(NSArray<CSFA_IdentifyResult*>*, AZOperationError*))callback;
+- (void)identifyWithFaceIds:(NSArray<NSUUID*> *)faceIds withCallback:(void(^)(NSArray<CSFA_IdentifyResult*> *, AZOperationError *))callback;
 
 /**
  * 1-to-many identification to find the closest matches of the specific query person face from a person group or large person group.
@@ -71,7 +71,7 @@
  * @param callback A block where NSArray<CSFA_IdentifyResult*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)identifyWithFaceIds:(NSArray<NSUUID*> *)faceIds withPersonGroupId:(NSString *)personGroupId withLargePersonGroupId:(NSString *)largePersonGroupId withMaxNumOfCandidatesReturned:(AZInteger *)maxNumOfCandidatesReturned withConfidenceThreshold:(AZDouble *)confidenceThreshold withCallback:(void(^)(NSArray<CSFA_IdentifyResult*>*, AZOperationError*))callback;
+- (void)identifyWithFaceIds:(NSArray<NSUUID*> *)faceIds withPersonGroupId:(NSString *)personGroupId withLargePersonGroupId:(NSString *)largePersonGroupId withMaxNumOfCandidatesReturned:(AZInteger *)maxNumOfCandidatesReturned withConfidenceThreshold:(AZDouble *)confidenceThreshold withCallback:(void(^)(NSArray<CSFA_IdentifyResult*> *, AZOperationError *))callback;
 
 /**
  * Verify whether two faces belong to a same person or whether one face belongs to a person.
@@ -81,7 +81,7 @@
  * @param callback A block where CSFA_VerifyResult is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)verifyFaceToFaceWithFaceId1:(NSUUID *)faceId1 withFaceId2:(NSUUID *)faceId2 withCallback:(void(^)(CSFA_VerifyResult*, AZOperationError*))callback;
+- (void)verifyFaceToFaceWithFaceId1:(NSUUID *)faceId1 withFaceId2:(NSUUID *)faceId2 withCallback:(void(^)(CSFA_VerifyResult *, AZOperationError *))callback;
 
 /**
  * Detect human faces in an image and returns face locations, and optionally with faceIds, landmarks, and attributes.
@@ -90,7 +90,7 @@
  * @param callback A block where NSArray<CSFA_DetectedFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)detectWithUrlWithUrl:(NSString *)url withCallback:(void(^)(NSArray<CSFA_DetectedFace*>*, AZOperationError*))callback;
+- (void)detectWithUrlWithUrl:(NSString *)url withCallback:(void(^)(NSArray<CSFA_DetectedFace*> *, AZOperationError *))callback;
 
 /**
  * Detect human faces in an image and returns face locations, and optionally with faceIds, landmarks, and attributes.
@@ -102,7 +102,7 @@
  * @param callback A block where NSArray<CSFA_DetectedFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)detectWithUrlWithUrl:(NSString *)url withReturnFaceId:(AZBoolean *)returnFaceId withReturnFaceLandmarks:(AZBoolean *)returnFaceLandmarks withReturnFaceAttributes:(NSArray<CSFA_FaceAttributeType*> *)returnFaceAttributes withCallback:(void(^)(NSArray<CSFA_DetectedFace*>*, AZOperationError*))callback;
+- (void)detectWithUrlWithUrl:(NSString *)url withReturnFaceId:(AZBoolean *)returnFaceId withReturnFaceLandmarks:(AZBoolean *)returnFaceLandmarks withReturnFaceAttributes:(NSArray<CSFA_FaceAttributeType*> *)returnFaceAttributes withCallback:(void(^)(NSArray<CSFA_DetectedFace*> *, AZOperationError *))callback;
 
 /**
  * Verify whether two faces belong to a same person. Compares a face Id with a Person Id.
@@ -112,7 +112,7 @@
  * @param callback A block where CSFA_VerifyResult is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)verifyFaceToPersonWithFaceId:(NSUUID *)faceId withPersonId:(NSUUID *)personId withCallback:(void(^)(CSFA_VerifyResult*, AZOperationError*))callback;
+- (void)verifyFaceToPersonWithFaceId:(NSUUID *)faceId withPersonId:(NSUUID *)personId withCallback:(void(^)(CSFA_VerifyResult *, AZOperationError *))callback;
 
 /**
  * Verify whether two faces belong to a same person. Compares a face Id with a Person Id.
@@ -124,7 +124,7 @@
  * @param callback A block where CSFA_VerifyResult is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)verifyFaceToPersonWithFaceId:(NSUUID *)faceId withPersonId:(NSUUID *)personId withPersonGroupId:(NSString *)personGroupId withLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_VerifyResult*, AZOperationError*))callback;
+- (void)verifyFaceToPersonWithFaceId:(NSUUID *)faceId withPersonId:(NSUUID *)personId withPersonGroupId:(NSString *)personGroupId withLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_VerifyResult *, AZOperationError *))callback;
 
 /**
  * Detect human faces in an image and returns face locations, and optionally with faceIds, landmarks, and attributes.
@@ -133,7 +133,7 @@
  * @param callback A block where NSArray<CSFA_DetectedFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)detectWithStreamWithImage:(AZStream *)image withCallback:(void(^)(NSArray<CSFA_DetectedFace*>*, AZOperationError*))callback;
+- (void)detectWithStreamWithImage:(AZStream *)image withCallback:(void(^)(NSArray<CSFA_DetectedFace*> *, AZOperationError *))callback;
 
 /**
  * Detect human faces in an image and returns face locations, and optionally with faceIds, landmarks, and attributes.
@@ -145,7 +145,7 @@
  * @param callback A block where NSArray<CSFA_DetectedFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)detectWithStreamWithImage:(AZStream *)image withReturnFaceId:(AZBoolean *)returnFaceId withReturnFaceLandmarks:(AZBoolean *)returnFaceLandmarks withReturnFaceAttributes:(NSArray<CSFA_FaceAttributeType*> *)returnFaceAttributes withCallback:(void(^)(NSArray<CSFA_DetectedFace*>*, AZOperationError*))callback;
+- (void)detectWithStreamWithImage:(AZStream *)image withReturnFaceId:(AZBoolean *)returnFaceId withReturnFaceLandmarks:(AZBoolean *)returnFaceLandmarks withReturnFaceAttributes:(NSArray<CSFA_FaceAttributeType*> *)returnFaceAttributes withCallback:(void(^)(NSArray<CSFA_DetectedFace*> *, AZOperationError *))callback;
 
 @end
 

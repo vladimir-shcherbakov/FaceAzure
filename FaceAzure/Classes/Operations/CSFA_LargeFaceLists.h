@@ -22,7 +22,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Create an empty large face list. Up to 64 large face lists are allowed to exist in one subscription.
@@ -33,7 +33,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithLargeFaceListId:(NSString *)largeFaceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithLargeFaceListId:(NSString *)largeFaceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve a large face list's information.
@@ -42,7 +42,7 @@
  * @param callback A block where CSFA_LargeFaceList is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(CSFA_LargeFaceList*, AZOperationError*))callback;
+- (void)getWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(CSFA_LargeFaceList *, AZOperationError *))callback;
 
 /**
  * Update information of a large face list.
@@ -51,7 +51,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update information of a large face list.
@@ -62,7 +62,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithLargeFaceListId:(NSString *)largeFaceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithLargeFaceListId:(NSString *)largeFaceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Delete an existing large face list according to faceListId. Persisted face images in the large face list will also be deleted.
@@ -71,7 +71,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve the training status of a large face list (completed or ongoing).
@@ -80,14 +80,14 @@
  * @param callback A block where CSFA_TrainingStatus is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getTrainingStatusWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(CSFA_TrainingStatus*, AZOperationError*))callback;
+- (void)getTrainingStatusWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(CSFA_TrainingStatus *, AZOperationError *))callback;
 
 /**
  * Retrieve information about all existing large face lists. Only largeFaceListId, name and userData will be returned.
  *
  * @param callback A block where NSArray<CSFA_LargeFaceList*> is a result object and AZOperationError is nil, if the operation is successful
  */
-- (void)listWithCallback:(void(^)(NSArray<CSFA_LargeFaceList*>*, AZOperationError*))callback;
+- (void)listWithCallback:(void(^)(NSArray<CSFA_LargeFaceList *>*, AZOperationError *))callback;
 
 /**
  * Queue a large face list training task, the training task may not be started immediately.
@@ -96,7 +96,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)trainWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)trainWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Delete an existing face from a large face list (given by a persisitedFaceId and a largeFaceListId). Persisted image related to the face will also be deleted.
@@ -106,7 +106,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve information about a persisted face (specified by persistedFaceId and its belonging largeFaceListId).
@@ -116,7 +116,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)getFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Update a persisted face's userData field.
@@ -126,7 +126,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update a persisted face's userData field.
@@ -137,7 +137,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateFaceWithLargeFaceListId:(NSString *)largeFaceListId withPersistedFaceId:(NSUUID *)persistedFaceId withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Add a face to a large face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -147,7 +147,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromUrlWithLargeFaceListId:(NSString *)largeFaceListId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromUrlWithLargeFaceListId:(NSString *)largeFaceListId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a face to a large face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -159,7 +159,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromUrlWithLargeFaceListId:(NSString *)largeFaceListId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromUrlWithLargeFaceListId:(NSString *)largeFaceListId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * List all faces in a large face list, and retrieve face information (including userData and persistedFaceIds of registered faces of the face).
@@ -168,7 +168,7 @@
  * @param callback A block where NSArray<CSFA_PersistedFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)listFacesWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(NSArray<CSFA_PersistedFace*>*, AZOperationError*))callback;
+- (void)listFacesWithLargeFaceListId:(NSString *)largeFaceListId withCallback:(void(^)(NSArray<CSFA_PersistedFace*> *, AZOperationError *))callback;
 
 /**
  * List all faces in a large face list, and retrieve face information (including userData and persistedFaceIds of registered faces of the face).
@@ -179,7 +179,7 @@
  * @param callback A block where NSArray<CSFA_PersistedFace*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)listFacesWithLargeFaceListId:(NSString *)largeFaceListId withStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_PersistedFace*>*, AZOperationError*))callback;
+- (void)listFacesWithLargeFaceListId:(NSString *)largeFaceListId withStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_PersistedFace*> *, AZOperationError *))callback;
 
 /**
  * Add a face to a large face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -189,7 +189,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromStreamWithLargeFaceListId:(NSString *)largeFaceListId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromStreamWithLargeFaceListId:(NSString *)largeFaceListId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a face to a large face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -201,7 +201,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromStreamWithLargeFaceListId:(NSString *)largeFaceListId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromStreamWithLargeFaceListId:(NSString *)largeFaceListId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 @end
 

@@ -35,7 +35,7 @@
     }
     return (CSFA_FindSimilarMatchMode *)string;
 }
-+ (NSString *)toStringValue:(CSFA_FindSimilarMatchMode *)value {
++ (NSString*)toStringValue:(CSFA_FindSimilarMatchMode*)value {
     if (![[CSFA_FindSimilarMatchMode values]containsObject:value]) {
         @throw [NSException exceptionWithName:@"EnumCastException" reason:@"Enum value doesn't exist" userInfo:nil];
     }

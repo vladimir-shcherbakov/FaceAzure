@@ -21,7 +21,7 @@
  * @param callback A block where CSFA_Person is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_Person*, AZOperationError*))callback;
+- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_Person *, AZOperationError *))callback;
 
 /**
  * Create a new person in a specified large person group.
@@ -32,7 +32,7 @@
  * @param callback A block where CSFA_Person is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(CSFA_Person*, AZOperationError*))callback;
+- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(CSFA_Person *, AZOperationError *))callback;
 
 /**
  * List all persons in a large person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
@@ -41,7 +41,7 @@
  * @param callback A block where NSArray<CSFA_Person*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)listWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(NSArray<CSFA_Person*>*, AZOperationError*))callback;
+- (void)listWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(NSArray<CSFA_Person*> *, AZOperationError *))callback;
 
 /**
  * List all persons in a large person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
@@ -52,7 +52,7 @@
  * @param callback A block where NSArray<CSFA_Person*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)listWithLargePersonGroupId:(NSString *)largePersonGroupId withStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_Person*>*, AZOperationError*))callback;
+- (void)listWithLargePersonGroupId:(NSString *)largePersonGroupId withStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_Person*> *, AZOperationError *))callback;
 
 /**
  * Delete an existing person from a large person group. All stored person data, and face features in the person entry will be deleted.
@@ -62,7 +62,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve a person's information, including registered persisted faces, name and userData.
@@ -72,7 +72,7 @@
  * @param callback A block where CSFA_Person is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withCallback:(void(^)(CSFA_Person*, AZOperationError*))callback;
+- (void)getWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withCallback:(void(^)(CSFA_Person *, AZOperationError *))callback;
 
 /**
  * Update name or userData of a person.
@@ -82,7 +82,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update name or userData of a person.
@@ -94,7 +94,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Delete a face from a person. Relative feature for the persisted face will also be deleted.
@@ -105,7 +105,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging largePersonGroupId).
@@ -116,7 +116,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)getFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Update a person persisted face's userData field.
@@ -127,7 +127,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update a person persisted face's userData field.
@@ -139,7 +139,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateFaceWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withPersistedFaceId:(NSUUID *)persistedFaceId withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
@@ -150,7 +150,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromUrlWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromUrlWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
@@ -163,7 +163,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromUrlWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromUrlWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
@@ -174,7 +174,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromStreamWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromStreamWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a representative face to a person for identification. The input face is specified as an image with a targetFace rectangle.
@@ -187,7 +187,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromStreamWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromStreamWithLargePersonGroupId:(NSString *)largePersonGroupId withPersonId:(NSUUID *)personId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 @end
 

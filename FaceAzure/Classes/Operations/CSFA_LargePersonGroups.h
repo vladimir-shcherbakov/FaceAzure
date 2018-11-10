@@ -21,7 +21,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Create a new large person group with specified largePersonGroupId, name and user-provided userData.
@@ -32,7 +32,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithLargePersonGroupId:(NSString *)largePersonGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Delete an existing large person group. Persisted face features of all people in the large person group will also be deleted.
@@ -41,7 +41,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve the information of a large person group, including its name and userData.
@@ -50,7 +50,7 @@
  * @param callback A block where CSFA_LargePersonGroup is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_LargePersonGroup*, AZOperationError*))callback;
+- (void)getWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_LargePersonGroup *, AZOperationError *))callback;
 
 /**
  * Update an existing large person group's display name and userData. The properties which does not appear in request body will not be updated.
@@ -59,7 +59,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update an existing large person group's display name and userData. The properties which does not appear in request body will not be updated.
@@ -70,7 +70,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithLargePersonGroupId:(NSString *)largePersonGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve the training status of a large person group (completed or ongoing).
@@ -79,7 +79,7 @@
  * @param callback A block where CSFA_TrainingStatus is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getTrainingStatusWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_TrainingStatus*, AZOperationError*))callback;
+- (void)getTrainingStatusWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(CSFA_TrainingStatus *, AZOperationError *))callback;
 
 /**
  * List large person groups and their information.
@@ -87,7 +87,7 @@
  * @param callback A block where NSArray<CSFA_LargePersonGroup*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)listWithCallback:(void(^)(NSArray<CSFA_LargePersonGroup*>*, AZOperationError*))callback;
+- (void)listWithCallback:(void(^)(NSArray<CSFA_LargePersonGroup*> *, AZOperationError *))callback;
 
 /**
  * List large person groups and their information.
@@ -96,7 +96,7 @@
  * @param top The number of large person groups to list.
  * @param callback A block where NSArray<CSFA_LargePersonGroup*> is a result object and AZOperationError is nil, if the operation is successful
  */
-- (void)listWithStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_LargePersonGroup*>*, AZOperationError*))callback;
+- (void)listWithStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_LargePersonGroup*> *, AZOperationError *))callback;
 
 /**
  * Queue a large person group training task, the training task may not be started immediately.
@@ -105,7 +105,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)trainWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)trainWithLargePersonGroupId:(NSString *)largePersonGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 @end
 

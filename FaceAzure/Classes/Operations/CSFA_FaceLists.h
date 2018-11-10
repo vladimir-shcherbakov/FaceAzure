@@ -21,7 +21,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Create an empty face list. Up to 64 face lists are allowed to exist in one subscription.
@@ -32,7 +32,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve a face list's information.
@@ -41,7 +41,7 @@
  * @param callback A block where CSFA_FaceList is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getWithFaceListId:(NSString *)faceListId withCallback:(void(^)(CSFA_FaceList*, AZOperationError*))callback;
+- (void)getWithFaceListId:(NSString *)faceListId withCallback:(void(^)(CSFA_FaceList *, AZOperationError *))callback;
 
 /**
  * Update information of a face list.
@@ -50,7 +50,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update information of a face list.
@@ -61,7 +61,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithFaceListId:(NSString *)faceListId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Delete an existing face list according to faceListId. Persisted face images in the face list will also be deleted.
@@ -70,14 +70,14 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteWithFaceListId:(NSString *)faceListId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve information about all existing face lists. Only faceListId, name and userData will be returned.
  *
  * @param callback A block where NSArray<CSFA_FaceList*> is a result object and AZOperationError is nil, if the operation is successful
  */
-- (void)listWithCallback:(void(^)(NSArray<CSFA_FaceList*>*, AZOperationError*))callback;
+- (void)listWithCallback:(void(^)(NSArray<CSFA_FaceList*>*, AZOperationError *))callback;
 
 /**
  * Delete an existing face from a face list (given by a persisitedFaceId and a faceListId). Persisted image related to the face will also be deleted.
@@ -87,7 +87,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteFaceWithFaceListId:(NSString *)faceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteFaceWithFaceListId:(NSString *)faceListId withPersistedFaceId:(NSUUID *)persistedFaceId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Add a face to a face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -97,7 +97,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a face to a face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -109,7 +109,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromUrlWithFaceListId:(NSString *)faceListId withUrl:(NSString *)url withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a face to a face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -119,7 +119,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 /**
  * Add a face to a face list. The input face is specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face, and persistedFaceId will not expire.
@@ -131,7 +131,7 @@
  * @param callback A block where CSFA_PersistedFace is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace*, AZOperationError*))callback;
+- (void)addFaceFromStreamWithFaceListId:(NSString *)faceListId withImage:(AZStream *)image withUserData:(NSString *)userData withTargetFace:(NSArray<AZInteger*> *)targetFace withCallback:(void(^)(CSFA_PersistedFace *, AZOperationError *))callback;
 
 @end
 

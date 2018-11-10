@@ -32,8 +32,8 @@
  * @throws IllegalArgumentException if a requred parameter is not provided
  */
 - (void)createWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError*))callback {
-    NSString* name = nil;
-    NSString* userData = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
     [self createWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:callback];
 }
 
@@ -222,8 +222,8 @@
  * @throws IllegalArgumentException if a requred parameter is not provided
  */
 - (void)updateWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError*))callback {
-    NSString* name = nil;
-    NSString* userData = nil;
+    NSString *name = nil;
+    NSString *userData = nil;
     [self updateWithPersonGroupId:personGroupId withName:name withUserData:userData withCallback:callback];
 }
 
@@ -359,8 +359,8 @@
  * @param callback A block where NSArray<CSFA_PersonGroup*> is a result object and AZOperationError is nil, if the operation is successful
  */
 - (void)listWithCallback:(void(^)(NSArray<CSFA_PersonGroup*>*, AZOperationError*))callback {
-    NSString* start = nil;
-    AZInteger* top = @1000;
+    NSString *start = nil;
+    AZInteger *top = @1000;
     [self listWithStart:start withTop:top withCallback:callback];
 }
 
@@ -372,7 +372,7 @@
  * @param callback A block where NSArray<CSFA_PersonGroup*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a requred parameter is not provided or a rule validation has failed
  */
-- (void)listWithStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_PersonGroup*>*, AZOperationError*))callback {
+- (void)listWithStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_PersonGroup*> *, AZOperationError *))callback {
 
     if (self.service.endpoint == nil) {
         @throw [NSException

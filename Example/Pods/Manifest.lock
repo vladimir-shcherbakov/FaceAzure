@@ -1,5 +1,5 @@
 PODS:
-  - AzureClientRuntime (0.1.4)
+  - AzureClientRuntime (0.1.5)
   - FaceAzure (0.1.0):
     - AzureClientRuntime (~> 0.1)
 
@@ -16,11 +16,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AzureClientRuntime:
-    :commit: 36442b7954f79b55eab80172b2da9f7697442fd0
+    :commit: 293ac99195a58379c5a02762426de445e3c6ea82
     :git: https://github.com/vladimir-shcherbakov/azure-runtime-client-for-objectiveC.git
 
 SPEC CHECKSUMS:
-  AzureClientRuntime: bb27e2f36a6b24faffa52e416e73dff7907f3b0b
+  AzureClientRuntime: 1afcae416489b942f3745762c9094331a12a0eed
   FaceAzure: b174df60625fb916658c5afee4a002673c7b116d
 
 PODFILE CHECKSUM: 3a32904d46a4a0758adb87783e0b9164ced0e356

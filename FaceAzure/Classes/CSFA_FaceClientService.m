@@ -21,64 +21,64 @@
     return self;
 }
 
-+ (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint  withSubscriptionKey:(NSString*)key{
-    CSFA_FaceClientService* client = [[CSFA_FaceClientService alloc] initWithEndpoint:endpoint withSubscriptionKey:key];
++ (id<CSFA_FaceClientServiceProtocol>)createWithEndpoint:(NSString*)endpoint withSubscriptionKey:(NSString*)key {
+    CSFA_FaceClientService *client = [[CSFA_FaceClientService alloc]initWithEndpoint:endpoint withSubscriptionKey:key];
     return client;
 }
 
 /**
  * The CSFA_Faces object to access its operations.
  */
-- (id<CSFA_FacesProtocol>) faces {
-     id<CSFA_FacesProtocol> op = [[CSFA_Faces alloc] initWithService:self];
+- (id<CSFA_FacesProtocol>)faces {
+     id<CSFA_FacesProtocol> op = [[CSFA_Faces alloc]initWithService:self];
      return op;
 }
 
 /**
  * The CSFA_PersonGroupPersons object to access its operations.
  */
-- (id<CSFA_PersonGroupPersonsProtocol>) personGroupPersons {
-     id<CSFA_PersonGroupPersonsProtocol> op = [[CSFA_PersonGroupPersons alloc] initWithService:self];
+- (id<CSFA_PersonGroupPersonsProtocol>)personGroupPersons {
+     id<CSFA_PersonGroupPersonsProtocol> op = [[CSFA_PersonGroupPersons alloc]initWithService:self];
      return op;
 }
 
 /**
  * The CSFA_PersonGroups object to access its operations.
  */
-- (id<CSFA_PersonGroupsProtocol>) personGroups {
-     id<CSFA_PersonGroupsProtocol> op = [[CSFA_PersonGroups alloc] initWithService:self];
+- (id<CSFA_PersonGroupsProtocol>)personGroups {
+     id<CSFA_PersonGroupsProtocol> op = [[CSFA_PersonGroups alloc]initWithService:self];
      return op;
 }
 
 /**
  * The CSFA_FaceLists object to access its operations.
  */
-- (id<CSFA_FaceListsProtocol>) faceLists {
-     id<CSFA_FaceListsProtocol> op = [[CSFA_FaceLists alloc] initWithService:self];
+- (id<CSFA_FaceListsProtocol>)faceLists {
+     id<CSFA_FaceListsProtocol> op = [[CSFA_FaceLists alloc]initWithService:self];
      return op;
 }
 
 /**
  * The CSFA_LargePersonGroupPersons object to access its operations.
  */
-- (id<CSFA_LargePersonGroupPersonsProtocol>) largePersonGroupPersons {
-     id<CSFA_LargePersonGroupPersonsProtocol> op = [[CSFA_LargePersonGroupPersons alloc] initWithService:self];
+- (id<CSFA_LargePersonGroupPersonsProtocol>)largePersonGroupPersons {
+     id<CSFA_LargePersonGroupPersonsProtocol> op = [[CSFA_LargePersonGroupPersons alloc]initWithService:self];
      return op;
 }
 
 /**
  * The CSFA_LargePersonGroups object to access its operations.
  */
-- (id<CSFA_LargePersonGroupsProtocol>) largePersonGroups {
-     id<CSFA_LargePersonGroupsProtocol> op = [[CSFA_LargePersonGroups alloc] initWithService:self];
+- (id<CSFA_LargePersonGroupsProtocol>)largePersonGroups {
+     id<CSFA_LargePersonGroupsProtocol> op = [[CSFA_LargePersonGroups alloc]initWithService:self];
      return op;
 }
 
 /**
  * The CSFA_LargeFaceLists object to access its operations.
  */
-- (id<CSFA_LargeFaceListsProtocol>) largeFaceLists {
-     id<CSFA_LargeFaceListsProtocol> op = [[CSFA_LargeFaceLists alloc] initWithService:self];
+- (id<CSFA_LargeFaceListsProtocol>)largeFaceLists {
+     id<CSFA_LargeFaceListsProtocol> op = [[CSFA_LargeFaceLists alloc]initWithService:self];
      return op;
 }
 @end

@@ -21,7 +21,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Create a new person group with specified personGroupId, name and user-provided userData.
@@ -32,7 +32,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)createWithPersonGroupId:(NSString *)personGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)createWithPersonGroupId:(NSString *)personGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Delete an existing person group. Persisted face features of all people in the person group will also be deleted.
@@ -41,7 +41,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)deleteWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)deleteWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve the information of a person group, including its name and userData.
@@ -50,7 +50,7 @@
  * @param callback A block where CSFA_PersonGroup is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(CSFA_PersonGroup*, AZOperationError*))callback;
+- (void)getWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(CSFA_PersonGroup *, AZOperationError *))callback;
 
 /**
  * Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.
@@ -59,7 +59,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.
@@ -70,7 +70,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)updateWithPersonGroupId:(NSString *)personGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError*))callback;
+- (void)updateWithPersonGroupId:(NSString *)personGroupId withName:(NSString *)name withUserData:(NSString *)userData withCallback:(void(^)(AZOperationError *))callback;
 
 /**
  * Retrieve the training status of a person group (completed or ongoing).
@@ -79,7 +79,7 @@
  * @param callback A block where CSFA_TrainingStatus is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)getTrainingStatusWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(CSFA_TrainingStatus*, AZOperationError*))callback;
+- (void)getTrainingStatusWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(CSFA_TrainingStatus *, AZOperationError *))callback;
 
 /**
  * List person groups and their information.
@@ -87,7 +87,7 @@
  * @param callback A block where NSArray<CSFA_PersonGroup*> is a result object and AZOperationError is nil, if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)listWithCallback:(void(^)(NSArray<CSFA_PersonGroup*>*, AZOperationError*))callback;
+- (void)listWithCallback:(void(^)(NSArray<CSFA_PersonGroup*> *, AZOperationError *))callback;
 
 /**
  * List person groups and their information.
@@ -96,7 +96,7 @@
  * @param top The number of person groups to list.
  * @param callback A block where NSArray<CSFA_PersonGroup*> is a result object and AZOperationError is nil, if the operation is successful
  */
-- (void)listWithStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_PersonGroup*>*, AZOperationError*))callback;
+- (void)listWithStart:(NSString *)start withTop:(AZInteger *)top withCallback:(void(^)(NSArray<CSFA_PersonGroup*> *, AZOperationError *))callback;
 
 /**
  * Queue a person group training task, the training task may not be started immediately.
@@ -105,7 +105,7 @@
  * @param callback A block where AZOperationError is nil if the operation is successful
  * @throws IllegalArgumentException if a required parameter is not provided.
  */
-- (void)trainWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError*))callback;
+- (void)trainWithPersonGroupId:(NSString *)personGroupId withCallback:(void(^)(AZOperationError *))callback;
 
 @end
 

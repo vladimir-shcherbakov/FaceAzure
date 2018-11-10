@@ -133,10 +133,10 @@
 - (void) test_faces_detectWithUrl {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     id<CSFA_FacesProtocol> op = [self.service faces];
-    NSString *url = nil;
+    NSString *url = @"https://testpictures.blob.core.windows.net/cogsrv/analyze1.jpg";
     AZBoolean *returnFaceId = AZ_YES;
     AZBoolean *returnFaceLandmarks = AZ_NO;
-    NSArray<CSFA_FaceAttributeType*> *returnFaceAttributes = nil;
+    NSArray<CSFA_FaceAttributeType*> *returnFaceAttributes = @[CSFA_FaceAttributeType.AGE, CSFA_FaceAttributeType.GENDER, CSFA_FaceAttributeType.EMOTION];
     [op detectWithUrlWithUrl:url withReturnFaceId:returnFaceId withReturnFaceLandmarks:returnFaceLandmarks withReturnFaceAttributes:returnFaceAttributes withCallback:^(NSArray<CSFA_DetectedFace*> *result, AZOperationError *error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
